@@ -1,0 +1,73 @@
+
+@mixin br($size: 1px, $type: solid, $color: black){
+	border: $size $type $color;
+}
+
+@mixin background-image($path){
+	background-image: url("../..#{$path}");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin font($ff: Verdana, $size: 9px, $style: normal, $weight: bold, $direction: start){
+	font-family: $ff;
+	font-size: $size;
+	font-style: $style;
+	font-weight: $weight;
+	text-align: $direction;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

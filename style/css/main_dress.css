@@ -1,0 +1,49 @@
+@import "http://webfonts.ru/import/alegreyasans.css";
+@import "http://webfonts.ru/import/dancingscript.css";
+body {
+  background-image: url("../../image/main_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+.mainPage {
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: #FFE7C8;
+  color: #1A0000;
+  min-width: 900px;
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  fle-flow: column wrap; }
+
+.winFrame {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  margin: 20px;
+  min-height: 20px;
+  min-widht: 20px; }
+  .winFrame .winText {
+    font-family: Dancing Script;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center; }
+
+.winContent {
+  border: 1px solid black;
+  background-color: #fff;
+  color: black;
+  margin: 2px;
+  font-family: Alegreya Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  text-align: start;
+  overflow: hidden;
+  height: 600px; }
+/*# sourceMappingURL=main_dress.css.map */

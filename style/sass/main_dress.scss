@@ -1,0 +1,64 @@
+
+@import "tools";
+@import "http://webfonts.ru/import/alegreyasans.css";
+@import "http://webfonts.ru/import/dancingscript.css";
+
+
+body{
+	@include background-image("/image/main_bg.jpg");
+	background-attachment: fixed;
+}
+
+.mainPage{
+	@include br();
+	border-radius: 3px;
+	background-color: #FFE7C8;
+	color: #1A0000;
+	min-width: 900px;
+	width: 90%;
+	margin: auto;
+	display: flex;
+	fle-flow: column wrap;
+}
+
+.winFrame{
+	@include br();
+	background-color: black;
+	color: white;
+	margin: 20px;
+	min-height: 20px;
+	min-widht: 20px;
+	& .winText{
+		@include font(Dancing Script, 26px, normal, bold, center);
+		
+	}
+}
+
+.winContent{
+	@include br();
+	background-color: #fff;
+	color: black;
+	margin: 2px;
+	@include font(Alegreya Sans, 16px);
+	overflow: hidden;
+	height: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
