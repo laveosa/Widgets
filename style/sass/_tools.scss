@@ -1,4 +1,40 @@
 
+//////////////////////////////////////////////////////////////////////////////////////////
+///     fonts     fonts     fonts     fonts     fonts     fonts     fonts     fonts    ///
+//////////////////////////////////////////////////////////////////////////////////////////
+
+@font-face{
+	font-family: Connoisseurs;
+	src: url('../../fonts/Connoisseurs.otf');
+	src: url('../../fonts/Connoisseurs.ttf');
+}
+@font-face{
+	font-family:Divine Razier;
+	src: url('../../fonts/Divine%20Razier.otf');
+}
+@font-face{
+	font-family: Fairytales Script Swashes;
+	src: url('../../fonts/Fairytales%20Script%20Swashes.otf');
+	src: url('../../fonts/Fairytales%20Script%20Swashes.ttf');
+}
+@font-face{
+	font-family: Fairytales Script;
+	src: url('../../fonts/Fairytales%20Script.otf');
+	src: url('../../fonts/Fairytales%20Script.ttf');
+} 
+@font-face{
+	font-family: Higher;
+	src: url('../../fonts/Higher.otf');
+	src: url('../../fonts/Higher.ttf');
+}
+// @font-face{
+// 	font-family:
+// }
+
+///////////////////////////////////////////////////////////////////////////////////////////
+////    mixins    mixins    mixins    mixins    mixins    mixins    mixins    mixins    ///
+///////////////////////////////////////////////////////////////////////////////////////////
+
 @mixin br($size: 1px, $type: solid, $color: black){
 	border: $size $type $color;
 }

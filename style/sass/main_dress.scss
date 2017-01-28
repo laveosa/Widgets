@@ -1,5 +1,6 @@
 
 @import "tools";
+@import "tab.scss";
 @import "http://webfonts.ru/import/alegreyasans.css";
 @import "http://webfonts.ru/import/dancingscript.css";
 
@@ -17,8 +18,7 @@ body{
 	min-width: 900px;
 	width: 90%;
 	margin: auto;
-	display: flex;
-	fle-flow: column wrap;
+	padding: 20px;
 }
 
 .winFrame{
@@ -28,6 +28,8 @@ body{
 	margin: 20px;
 	min-height: 20px;
 	min-widht: 20px;
+	width: 80%;
+	margin: auto;
 	& .winText{
 		@include font(Dancing Script, 26px, normal, bold, center);
 		
@@ -41,10 +43,16 @@ body{
 	margin: 2px;
 	@include font(Alegreya Sans, 16px);
 	overflow: hidden;
-	height: 600px;
+	height: 1200px;
 }
 
-
+.line{
+	border: 3px outset #8F8F8F;
+	border-radius: 48px;
+	width: 90%;
+	height: 1px;
+	background-color: black;	
+}
 
 
 

@@ -1,4 +1,112 @@
 
+@import "tools";
+@import "http://webfonts.ru/import/bicubik.css";
+/*
+	Bicubik, 400
+*/
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+///   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab  /// 
+////////////////////////////////////////////////////////////////////////////////////////////
+
+.tabTop{
+	margin: 10px;
+	height: auto;
+	
+	// $font: Divine Razier;
+	// $font: Connoisseurs;
+	// $font: Fairytales Script Swashes;
+	// $font: Fairytales Script;
+	// $font: Higher;
+	
+	font-family: Bicubik;
+	// font-size: 26px;
+}
+
+$fColor: #10E000;
+$bColor: #141C14;
+
+.tabLinks{
+	position: relative;
+	top: 4px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-flow: row wrap;
+	& li{
+		width: 76px;
+		height: 40px;
+		margin-left: 6px;
+		border: 4px solid black;
+		background-color: $bColor;
+		border-radius: 6px 6px 0px 0px;
+		display: flex;
+		&:hover{
+			background-color: $fColor;
+			& a{
+				color: $bColor;
+			}
+		}
+		& a{
+			@include br();
+			text-decoration: none;
+			color: $fColor;
+			flex-grow: 1;
+			text-align: center;
+			line-height: 40px;
+		}
+	}
+}
+
+.tabLinks a{
+	transition: all 400ms ease-in-out;
+}
+
+.tabContent{
+	@include br();
+	background-color: black;
+	padding: 2px;
+	border-radius: 3px;
+	& .tab{
+		@include br();
+		background-color: $bColor;
+		color: $fColor;
+	}
+}
+
+li.active{
+	background-color: $fColor;
+	& a{
+		color: $bColor;
+	}
+}
+
+.tab{
+	height: 300px;
+	overflow: hidden;
+	display: none;
+	& p:first-child{
+		text-align: center;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+///  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  /// 
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

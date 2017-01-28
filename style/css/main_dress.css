@@ -1,5 +1,105 @@
+@import "http://webfonts.ru/import/bicubik.css";
 @import "http://webfonts.ru/import/alegreyasans.css";
 @import "http://webfonts.ru/import/dancingscript.css";
+@font-face {
+  font-family: Connoisseurs;
+  src: url("../../fonts/Connoisseurs.otf");
+  src: url("../../fonts/Connoisseurs.ttf"); }
+@font-face {
+  font-family: Divine Razier;
+  src: url("../../fonts/Divine%20Razier.otf"); }
+@font-face {
+  font-family: Fairytales Script Swashes;
+  src: url("../../fonts/Fairytales%20Script%20Swashes.otf");
+  src: url("../../fonts/Fairytales%20Script%20Swashes.ttf"); }
+@font-face {
+  font-family: Fairytales Script;
+  src: url("../../fonts/Fairytales%20Script.otf");
+  src: url("../../fonts/Fairytales%20Script.ttf"); }
+@font-face {
+  font-family: Higher;
+  src: url("../../fonts/Higher.otf");
+  src: url("../../fonts/Higher.ttf"); }
+@font-face {
+  font-family: Connoisseurs;
+  src: url("../../fonts/Connoisseurs.otf");
+  src: url("../../fonts/Connoisseurs.ttf"); }
+@font-face {
+  font-family: Divine Razier;
+  src: url("../../fonts/Divine%20Razier.otf"); }
+@font-face {
+  font-family: Fairytales Script Swashes;
+  src: url("../../fonts/Fairytales%20Script%20Swashes.otf");
+  src: url("../../fonts/Fairytales%20Script%20Swashes.ttf"); }
+@font-face {
+  font-family: Fairytales Script;
+  src: url("../../fonts/Fairytales%20Script.otf");
+  src: url("../../fonts/Fairytales%20Script.ttf"); }
+@font-face {
+  font-family: Higher;
+  src: url("../../fonts/Higher.otf");
+  src: url("../../fonts/Higher.ttf"); }
+/*
+	Bicubik, 400
+*/
+.tabTop {
+  margin: 10px;
+  height: auto;
+  font-family: Bicubik; }
+
+.tabLinks {
+  position: relative;
+  top: 4px;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-flow: row wrap; }
+  .tabLinks li {
+    width: 76px;
+    height: 40px;
+    margin-left: 6px;
+    border: 4px solid black;
+    background-color: #141C14;
+    border-radius: 6px 6px 0px 0px;
+    display: flex; }
+    .tabLinks li:hover {
+      background-color: #10E000; }
+      .tabLinks li:hover a {
+        color: #141C14; }
+    .tabLinks li a {
+      border: 1px solid black;
+      text-decoration: none;
+      color: #10E000;
+      flex-grow: 1;
+      text-align: center;
+      line-height: 40px; }
+
+.tabLinks a {
+  transition: all 400ms ease-in-out; }
+
+.tabContent {
+  border: 1px solid black;
+  background-color: black;
+  padding: 2px;
+  border-radius: 3px; }
+  .tabContent .tab {
+    border: 1px solid black;
+    background-color: #141C14;
+    color: #10E000; }
+
+li.active {
+  background-color: #10E000; }
+  li.active a {
+    color: #141C14; }
+
+.tab {
+  height: 300px;
+  overflow: hidden;
+  display: none; }
+  .tab p:first-child {
+    text-align: center; }
+
 body {
   background-image: url("../../image/main_bg.jpg");
   background-size: cover;
@@ -14,11 +114,7 @@ body {
   min-width: 900px;
   width: 90%;
   margin: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  fle-flow: column wrap; }
+  padding: 20px; }
 
 .winFrame {
   border: 1px solid black;
@@ -26,7 +122,9 @@ body {
   color: white;
   margin: 20px;
   min-height: 20px;
-  min-widht: 20px; }
+  min-widht: 20px;
+  width: 80%;
+  margin: auto; }
   .winFrame .winText {
     font-family: Dancing Script;
     font-size: 26px;
@@ -45,5 +143,13 @@ body {
   font-weight: bold;
   text-align: start;
   overflow: hidden;
-  height: 600px; }
+  height: 1200px; }
+
+.line {
+  border: 3px outset #8F8F8F;
+  border-radius: 48px;
+  width: 90%;
+  height: 1px;
+  background-color: black; }
+
 /*# sourceMappingURL=main_dress.css.map */
