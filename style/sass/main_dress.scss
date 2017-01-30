@@ -21,6 +21,11 @@ body{
 	padding: 20px;
 }
 
+.mainPage h1{
+	@include font(Dancing Script, 26px, normal, bold, center);
+	font-size: 40px;
+}
+
 .winFrame{
 	@include br();
 	background-color: black;
@@ -43,7 +48,7 @@ body{
 	margin: 2px;
 	@include font(Alegreya Sans, 16px);
 	overflow: hidden;
-	height: 1200px;
+	height: auto;
 }
 
 .line{

@@ -1,28 +1,6 @@
 @import "http://webfonts.ru/import/ashley.css";
-@import "http://webfonts.ru/import/ashley.css";
 @import "http://webfonts.ru/import/bicubik.css";
 @import "http://webfonts.ru/import/beermoney.css";
-@import "http://webfonts.ru/import/alegreyasans.css";
-@import "http://webfonts.ru/import/dancingscript.css";
-@font-face {
-  font-family: Connoisseurs;
-  src: url("../../fonts/Connoisseurs.otf");
-  src: url("../../fonts/Connoisseurs.ttf"); }
-@font-face {
-  font-family: Divine Razier;
-  src: url("../../fonts/Divine%20Razier.otf"); }
-@font-face {
-  font-family: Fairytales Script Swashes;
-  src: url("../../fonts/Fairytales%20Script%20Swashes.otf");
-  src: url("../../fonts/Fairytales%20Script%20Swashes.ttf"); }
-@font-face {
-  font-family: Fairytales Script;
-  src: url("../../fonts/Fairytales%20Script.otf");
-  src: url("../../fonts/Fairytales%20Script.ttf"); }
-@font-face {
-  font-family: Higher;
-  src: url("../../fonts/Higher.otf");
-  src: url("../../fonts/Higher.ttf"); }
 @font-face {
   font-family: Connoisseurs;
   src: url("../../fonts/Connoisseurs.otf");
@@ -56,13 +34,8 @@
   list-style: none;
   margin: 0px;
   padding: 0px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap; }
+  flex-flow: row wrap; }
   .tabLinks li {
     width: 76px;
     height: 40px;
@@ -70,9 +43,6 @@
     border: 4px solid black;
     background-color: #141C14;
     border-radius: 6px 6px 0px 0px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex; }
     .tabLinks li:hover {
       background-color: #10E000; }
@@ -82,16 +52,12 @@
       border: 1px solid black;
       text-decoration: none;
       color: #10E000;
-      -webkit-box-flex: 1;
-      -webkit-flex-grow: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1;
+      flex-grow: 1;
       text-align: center;
       line-height: 40px; }
 
 .tabLinks a {
-  -webkit-transition: all 400ms ease-in-out;
-          transition: all 400ms ease-in-out; }
+  transition: all 400ms ease-in-out; }
 
 .tabContent {
   border: 1px solid black;
@@ -129,17 +95,9 @@ li.active {
   margin: 10px; }
 
 .tabConteiner {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-flow: row wrap;
+  align-items: flex-end;
   overflow: hidden;
   position: relative; }
 
@@ -152,8 +110,7 @@ li.active {
   position: absolute;
   cursor: pointer;
   top: 30px;
-  -webkit-transition: all 260ms ease-out;
-          transition: all 260ms ease-out;
+  transition: all 260ms ease-out;
   box-shadow: inset 0px 0px 30px #BDBDBD;
   background-image: url("../../image/texture_paper_2.jpg"); }
 
@@ -169,161 +126,113 @@ li.active {
 
 #tab_head.tabConteiner div:nth-child(1) {
   left: 5px;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
+  transform: rotate(0deg);
   z-index: 1; }
   #tab_head.tabConteiner div:nth-child(1) div {
     background-color: #A86EA7;
     box-shadow: inset 0px 0px 30px #582C69; }
   #tab_head.tabConteiner div:nth-child(1):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(2) {
   left: 60px;
-  -webkit-transform: rotate(-6deg);
-      -ms-transform: rotate(-6deg);
-          transform: rotate(-6deg); }
+  transform: rotate(-6deg); }
   #tab_head.tabConteiner div:nth-child(2) div {
     background-color: #A8736E;
     box-shadow: inset 0px 0px 30px #803E3E; }
   #tab_head.tabConteiner div:nth-child(2):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(3) {
   left: 120px;
-  -webkit-transform: rotate(2deg);
-      -ms-transform: rotate(2deg);
-          transform: rotate(2deg);
+  transform: rotate(2deg);
   z-index: 1; }
   #tab_head.tabConteiner div:nth-child(3) div {
     background-color: #7B82C4;
     box-shadow: inset 0px 0px 30px #25284A; }
   #tab_head.tabConteiner div:nth-child(3):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(4) {
   left: 180px;
-  -webkit-transform: rotate(-12deg);
-      -ms-transform: rotate(-12deg);
-          transform: rotate(-12deg); }
+  transform: rotate(-12deg); }
   #tab_head.tabConteiner div:nth-child(4) div {
     background-color: #7BC4A9;
     box-shadow: inset 0px 0px 30px #016B29; }
   #tab_head.tabConteiner div:nth-child(4):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(5) {
   left: 240px;
-  -webkit-transform: rotate(9deg);
-      -ms-transform: rotate(9deg);
-          transform: rotate(9deg); }
+  transform: rotate(9deg); }
   #tab_head.tabConteiner div:nth-child(5) div {
     background-color: #F6FF00;
     box-shadow: inset 0px 0px 30px #6B6701; }
   #tab_head.tabConteiner div:nth-child(5):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(6) {
   left: 300px;
-  -webkit-transform: rotate(2deg);
-      -ms-transform: rotate(2deg);
-          transform: rotate(2deg); }
+  transform: rotate(2deg); }
   #tab_head.tabConteiner div:nth-child(6) div {
     background-color: #00FF0C;
     box-shadow: inset 0px 0px 30px #016B01; }
   #tab_head.tabConteiner div:nth-child(6):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(7) {
   left: 380px;
-  -webkit-transform: rotate(-7deg);
-      -ms-transform: rotate(-7deg);
-          transform: rotate(-7deg);
+  transform: rotate(-7deg);
   z-index: 1; }
   #tab_head.tabConteiner div:nth-child(7) div {
     background-color: #00FFF6;
     box-shadow: inset 0px 0px 30px #016B6A; }
   #tab_head.tabConteiner div:nth-child(7):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(8) {
   left: 440px;
-  -webkit-transform: rotate(1deg);
-      -ms-transform: rotate(1deg);
-          transform: rotate(1deg); }
+  transform: rotate(1deg); }
   #tab_head.tabConteiner div:nth-child(8) div {
     background-color: #4800FF;
     box-shadow: inset 0px 0px 30px #08016B; }
   #tab_head.tabConteiner div:nth-child(8):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(9) {
   left: 520px;
-  -webkit-transform: rotate(-8deg);
-      -ms-transform: rotate(-8deg);
-          transform: rotate(-8deg);
+  transform: rotate(-8deg);
   z-index: 1; }
   #tab_head.tabConteiner div:nth-child(9) div {
     background-color: #FF00E4;
     box-shadow: inset 0px 0px 30px #6B0162; }
   #tab_head.tabConteiner div:nth-child(9):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 #tab_head.tabConteiner div:nth-child(10) {
   left: 590px;
-  -webkit-transform: rotate(4deg);
-      -ms-transform: rotate(4deg);
-          transform: rotate(4deg); }
+  transform: rotate(4deg); }
   #tab_head.tabConteiner div:nth-child(10) div {
     background-color: #FF0000;
     box-shadow: inset 0px 0px 30px #6B0101; }
   #tab_head.tabConteiner div:nth-child(10):hover {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 2;
     top: 6px; }
 
 #tab_body.tabConteiner {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-flow: row;
+  align-items: flex-start;
   position: relative;
   width: auto;
   height: 300px;
@@ -349,64 +258,4 @@ li.active {
   background-repeat: no-repeat;
   font-family: AshleyCapitaliSofia; }
 
-body {
-  background-image: url("../../image/main_bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
-
-.mainPage {
-  border: 1px solid black;
-  border-radius: 3px;
-  background-color: #FFE7C8;
-  color: #1A0000;
-  min-width: 900px;
-  width: 90%;
-  margin: auto;
-  padding: 20px; }
-
-.mainPage h1 {
-  font-family: Dancing Script;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: bold;
-  text-align: center;
-  font-size: 40px; }
-
-.winFrame {
-  border: 1px solid black;
-  background-color: black;
-  color: white;
-  margin: 20px;
-  min-height: 20px;
-  min-widht: 20px;
-  width: 80%;
-  margin: auto; }
-  .winFrame .winText {
-    font-family: Dancing Script;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: bold;
-    text-align: center; }
-
-.winContent {
-  border: 1px solid black;
-  background-color: #fff;
-  color: black;
-  margin: 2px;
-  font-family: Alegreya Sans;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: bold;
-  text-align: start;
-  overflow: hidden;
-  height: auto; }
-
-.line {
-  border: 3px outset #8F8F8F;
-  border-radius: 48px;
-  width: 90%;
-  height: 1px;
-  background-color: black; }
-
-/*# sourceMappingURL=main_dress.css.map */
+/*# sourceMappingURL=tab.css.map */

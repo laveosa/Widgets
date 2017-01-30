@@ -10,18 +10,12 @@
 ///   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab  /// 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+$mainMargin: 10px;
+
 .tabTop{
-	margin: 10px;
+	margin: $mainMargin;
 	height: auto;
-	
-	// $font: Divine Razier;
-	// $font: Connoisseurs;
-	// $font: Fairytales Script Swashes;
-	// $font: Fairytales Script;
-	// $font: Higher;
-	
 	font-family: Bicubik;
-	// font-size: 26px;
 }
 
 $fColor: #10E000;
@@ -92,33 +86,236 @@ li.active{
 	}
 }
 
+.blockTip{
+	color:red;
+	@include font(Bicubik, 12px, normal, bold, right);
+	margin-right: 12px;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ///  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  /// 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+@import "http://webfonts.ru/import/beermoney.css";
 
+$widthMark: 80px;
+$heightMark: 150px;
+$markShadow: 30px;
+$markDeep: 30px;
 
+.tabStiker{
+	padding: 1px;
+	margin: $mainMargin;
+}
 
+.tabConteiner{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-end;
+	overflow: hidden;
+	position: relative;
+}
 
+#tab_head.tabConteiner{
+	height: 140px;
+	
+}
 
+.bookMark{
+	width: $widthMark;
+	height: $heightMark;
+	position: absolute;
+	cursor: pointer;
+	top: $markDeep;
+	transition: all 260ms ease-out;
+	box-shadow: inset 0px 0px $markShadow #BDBDBD;
+	background-image: url("../../image/texture_paper_2.jpg");
+	
+}
 
+.bookMarkLogo{
+	width: 100%;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	font-family: Beer money;
+	font-size: 34px;
+	color: white;
+	z-index: 0;
+}
 
+$markIndex: 2;
+$markUp: 6px;
 
+#tab_head.tabConteiner{
+	& div:nth-child(1){
+		left: 5px;	
+		transform: rotate(0deg);
+		z-index: 1;
+		& div{
+			background-color: #A86EA7;
+			box-shadow: inset 0px 0px $markShadow #582C69;
+		}
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(2){
+		left: 60px;	
+		transform: rotate(-6deg);
+		& div{
+			background-color: #A8736E;
+			box-shadow: inset 0px 0px $markShadow #803E3E;
+		}	
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(3){
+		left: 120px;	
+		transform: rotate(2deg);
+		z-index: 1;
+		& div{
+			background-color: #7B82C4;
+			box-shadow: inset 0px 0px $markShadow #25284A;
+		}		
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(4){
+		left: 180px;	
+		transform: rotate(-12deg);
+		& div{
+			background-color: #7BC4A9;
+			box-shadow: inset 0px 0px $markShadow #016B29;
+		}	
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(5){
+		left: 240px;	
+		transform: rotate(9deg);
+		& div{
+			background-color: #F6FF00;
+			box-shadow: inset 0px 0px $markShadow #6B6701;
+		}	
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(6){
+		left: 300px;	
+		transform: rotate(2deg);
+		& div{
+			background-color: #00FF0C;
+			box-shadow: inset 0px 0px $markShadow #016B01;
+		}	
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(7){
+		left: 380px;	
+		transform: rotate(-7deg);
+		z-index: 1;
+		& div{
+			background-color: #00FFF6;
+			box-shadow: inset 0px 0px $markShadow #016B6A;
+		}	
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(8){
+		left: 440px;	
+		transform: rotate(1deg);
+		& div{
+			background-color: #4800FF;
+			box-shadow: inset 0px 0px $markShadow #08016B;
+		}
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(9){
+		left: 520px;	
+		transform: rotate(-8deg);
+		z-index: 1;
+		& div{
+			background-color: #FF00E4;
+			box-shadow: inset 0px 0px $markShadow #6B0162;
+		}
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}
+	}
+	& div:nth-child(10){
+		left: 590px;
+		transform: rotate(4deg);
+		& div{
+			background-color: #FF0000;
+			box-shadow: inset 0px 0px $markShadow #6B0101;
+		}	
+		&:hover{
+			transform: rotate(0deg);
+			z-index: $markIndex;
+			top: $markUp;
+		}	
+	}
+}
 
+#tab_body.tabConteiner{
+	display: flex;
+	flex-flow: row;
+	align-items: flex-start;
+	position: relative;
+	width: auto;
+	height: 300px;
+	@include background-image("/image/texture_not_bg_1.jpg");
+	padding: 10px;
+}
 
+.page{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	display: none;
+	height: 0px;
+}
 
+.textPage{
+	height: 100%;
+	width: 100%;
+	resize: none;
+	@include background-image("/image/texture_paper_1.jpg");
+	font-family: AshleyCapitaliSofia;
+	
+}
 
-
-
-
-
-
-
-
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark   /// 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
