@@ -316,8 +316,152 @@ li.active {
   color: #B3E5FC; }
 
 .videoFrame {
-  height: 400px;
+  height: 600px;
   width: 99%;
   margin: 2px; }
+
+.storageBox {
+  margin: 10px; }
+
+.boxHead {
+  position: relative;
+  top: 4px;
+  z-index: 1; }
+
+.boxMarksConteiner {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+  .boxMarksConteiner li:first-child {
+    border-left: 4px solid blue; }
+  .boxMarksConteiner li:last-child {
+    border-right: 4px solid blue; }
+
+.boxMark {
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  width: 60px;
+  height: 40px;
+  display: flex;
+  border: 4px solid blue;
+  border-bottom: 0;
+  border-left: 4px dotted blue;
+  border-right: 4px dotted blue;
+  background-color: blue; }
+  .boxMark p {
+    color: white;
+    margin: auto; }
+
+.boxMarkActive, .boxMark:hover {
+  cursor: pointer;
+  width: 60px;
+  height: 40px;
+  display: flex;
+  background-color: white; }
+  .boxMarkActive p, .boxMark:hover p {
+    color: blue;
+    margin: auto;
+    pointer-events: none; }
+
+.boxBody {
+  border: 4px solid blue; }
+  .boxBody div {
+    padding: 4px; }
+
+.boxBody,
+.boxContent {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  min-height: 200px; }
+
+.boxContent {
+  display: flex;
+  display: none; }
+
+.boxContentActive {
+  display: flex;
+  display: block; }
+
+.fioFrame {
+  display: flex;
+  flex-direction: row; }
+  .fioFrame > div {
+    min-width: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; }
+
+.fioRow {
+  flex-grow: 2; }
+
+.rowMain {
+  width: auto;
+  height: 40px;
+  display: flex;
+  flex-direction: row; }
+  .rowMain > div {
+    display: flex; }
+
+.rowMainTitle {
+  border: 1px solid blue;
+  border-radius: 30px 0 0 30px;
+  background-color: blue; }
+  .rowMainTitle p {
+    color: white; }
+
+.rowMainContent {
+  border: 1px solid blue;
+  border-radius: 0 30px 30px 0;
+  width: 100%;
+  overflow: hidden; }
+
+.titleText {
+  margin: auto;
+  padding: 0px;
+  width: 100px;
+  text-align: center; }
+
+.contentText {
+  margin: auto;
+  padding: 0px;
+  min-width: 200px;
+  width: 98%;
+  height: 100%;
+  border: 0; }
+
+.fioPhoto {
+  border: 1px solid blue;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.photoFileFrame {
+  border: 1px solid black;
+  border-radius: 180px;
+  background-color: black;
+  box-shadow: inset 0px 0px 20px black;
+  overflow: hidden;
+  width: 260px;
+  height: 260px;
+  margin: 10px; }
+
+.fileUpload {
+  width: auto;
+  height: auto;
+  overflow: hidden; }
+  .fileUpload > [type=file] {
+    display: none; }
+
+.imgFile {
+  position: relative;
+  right: 4px;
+  bottom: 4px;
+  width: 104%;
+  height: 104%; }
 
 /*# sourceMappingURL=tab.css.map */

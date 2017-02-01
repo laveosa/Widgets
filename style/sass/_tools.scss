@@ -58,6 +58,23 @@
 	
 }
 
+@mixin tend(){
+	@include br(1px, solid, red);
+	padding: 1px;
+	& *{
+		@include br(1px, solid, green);
+		padding: 1px;
+	}
+	& div{
+		@include br(1px, solid, blue);
+	}
+	& input{
+		@include br(1px, solid, violet);
+	}
+	& p{
+		@include br(1px, solid, black);
+	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ////    animation    animation    animation    animation    animation    animation      ///
