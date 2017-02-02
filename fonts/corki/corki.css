@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Corki';
+    src: local('Corki'), local('Corki-Regular'), url('corki.woff2') format('woff2'), url('corki.woff') format('woff'), url('corki.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

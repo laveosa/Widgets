@@ -3,37 +3,92 @@
 ///     fonts     fonts     fonts     fonts     fonts     fonts     fonts     fonts    ///
 //////////////////////////////////////////////////////////////////////////////////////////
 
-@font-face{
-	font-family: Connoisseurs;
-	src: url('../../fonts/Connoisseurs.otf');
-	src: url('../../fonts/Connoisseurs.ttf');
+/////// Beer money
+/////// Bicubik
+/////// Forum
+/////// AshleyCapitaliSofia
+/////// Dancing Script
+/////// Alegreya Sans
+/////// Corki
+/////// Dehuti
+/////// Higher
+/////// Sweet
+
+@font-face {
+	font-family: Beer money;
+	src: url("../../fonts/beermoney/beer money.ttf");
 }
-@font-face{
-	font-family:Divine Razier;
-	src: url('../../fonts/Divine%20Razier.otf');
+
+@font-face {
+	font-family: Bicubik;
+	src: url("../../fonts/bicubik/Bicubik.otf");
 }
-@font-face{
-	font-family: Fairytales Script Swashes;
-	src: url('../../fonts/Fairytales%20Script%20Swashes.otf');
-	src: url('../../fonts/Fairytales%20Script%20Swashes.ttf');
+
+@font-face {
+	font-family: Forum;
+	src: url("../../fonts/forum/Forum-Regular.otf");
 }
-@font-face{
-	font-family: Fairytales Script;
-	src: url('../../fonts/Fairytales%20Script.otf');
-	src: url('../../fonts/Fairytales%20Script.ttf');
-} 
-@font-face{
+
+@font-face {
+	font-family: AshleyCapitaliSofia;
+	src: url("../../fonts/ashley/AshleyCapitaliSofia.otf");
+}
+
+@font-face {
+	font-family: Dancing Script;
+	src: url("../../fonts/dancingscript/dancingscriptot.ttf"),
+	     url("../../fonts/dancingscript/dancingscriptot.woff"),
+	     url("../../fonts/dancingscript/dancingscriptot.woff2");
+}
+
+@font-face {
+	font-family: Alegreya Sans;
+	src: url("../../fonts/alegreyasanssc/AlegreyaSansSC-Black.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-BlackItalic.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-Bold.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-BoldItalic.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-ExtraBold.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-ExtraBoldItalic.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-Italic.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-Light.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-LightItalic.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-Medium.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-MediumItalic.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-Regular.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-Thin.otf"),
+	     url("../../fonts/alegreyasanssc/AlegreyaSansSC-ThinItalic.otf"),; 
+}
+
+@font-face {
+	font-family: Corki;
+	src: url("../../fonts/corki/corki.css"),
+	     url("../../fonts/corki/corki.woff"),
+	     url("../../fonts/corki/corki.woff2");
+}
+
+@font-face {
+	font-family: Dehuti;
+	src: url("../../fonts/dehuti/Dehuti-Bold-Italic.otf"),
+	     url("../../fonts/dehuti/Dehuti-Bold.otf"),
+	     url("../../fonts/dehuti/Dehuti-Book.otf"),
+	     url("../../fonts/dehuti/Dehuti-Italic.otf");
+}
+
+@font-face {
 	font-family: Higher;
-	src: url('../../fonts/Higher.otf');
-	src: url('../../fonts/Higher.ttf');
+	src: url("../../fonts/Higher/Higher.otf"),
+	     url("../../fonts/Higher/Higher.ttf");
 }
 
-@import "http://webfonts.ru/import/ashley.css";
-@import "http://webfonts.ru/import/forum.css";
-
-
-
-
+@font-face {
+	font-family: Sweet;
+	src: url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.eot"),
+			 url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.otf"),
+			 url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.svg"),
+			 url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.ttf"),
+			 url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.woff"),
+			 url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.woff2");
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ////    mixins    mixins    mixins    mixins    mixins    mixins    mixins    mixins    ///
@@ -49,7 +104,7 @@
 	background-repeat: no-repeat;
 }
 
-@mixin font($ff: Verdana, $size: 9px, $style: normal, $weight: bold, $direction: start){
+@mixin font($ff: Verdana, $size: 9px, $style: normal, $weight: normal, $direction: start){
 	font-family: $ff;
 	font-size: $size;
 	font-style: $style;

@@ -106,6 +106,8 @@
 
 (function(){
 	window.addEventListener("load", function(){
+		var infoTest = new hrManager();
+
 		$(".boxMark").on("click", function(){
 			$(".boxMarkActive").removeClass('boxMarkActive');
 			$(this).addClass('boxMarkActive');
@@ -116,11 +118,100 @@
 
 		$(".boxMark").eq(0).click();
 
-	});
+		$("#gender_block .btnSet").on("click", function(){
+			$("#gender_block .btnSet").removeClass("btnSetActive");
+			$(this).addClass("btnSetActive");
+		});
+
+		$("#gender_block .btnSet").eq(0).click();
+
+		$("#married_block .btnSet").on("click", function(){
+			$("#married_block .btnSet").removeClass("btnSetActive");
+			$(this).addClass("btnSetActive");
+		});
+
+		$("#married_block .btnSet").eq(0).click();
+
+		$("#row_6 .contentText").autocomplete({
+			source: itLanguages,
+			delay: 300,
+			max: 6,
+			minLength: 1
+		});
+
+		$(".contentText").tooltip({
+			position: { my: "left+15 center", at: "right center"},
+			show: {effect: "blind", duration: 300, delay: 600},
+			hide: {effect: "explode", duration: 300}
+		});
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $(".contentText[data-type=name]").on("change", function(){
+    	validationCheck(this);
+    	
+    });	
+
+    function validationCheck(obj){
+    	if($(obj).val().length == 0)
+    		$(obj).css({backgroundColor: 'white'});
+    	else{
+    		var D_type =  $(obj).attr("data-type");
+    		switch (D_type) {
+    			case "name":
+    			if(infoTest.setName($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;
+    			case "family":
+    			if(infoTest.setFamily($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;
+    			case "position":
+    			if(infoTest.setPosition($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;	
+    		}
+    	}
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    ////   parser   parser   parser   parser   parser   parser   parser   parser   parser   parser  ///
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  });
 })();
 
+function hrManager(){
+	var patternTextOnly = /^[a-zA-Z]{2,20}$/;
+	var patternEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+	var _name;
+	var _family;
+	var _position;
+	var _gender;
+	var _maritalStatus;
+	var _city;
+	var _phone;
+	var _email;
+	var _skayp;
+	var _git;
+	var _web;
 
+	this.setName = function(data){return patternTextOnly.test(data);};
+	this.getName = function(){return _name};
+	this.setFamily = function(data){return patternTextOnly.test(data);};
+	this.getFamily = function(){return _family};
+	this.setPosition = function(data){return patternTextOnly.test(data);};
+	this.getPosition = function(){return _position};
+
+}
 
 
 

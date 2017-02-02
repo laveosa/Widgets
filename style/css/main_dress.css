@@ -1,52 +1,63 @@
-@import "http://webfonts.ru/import/ashley.css";
-@import "http://webfonts.ru/import/forum.css";
-@import "http://webfonts.ru/import/ashley.css";
-@import "http://webfonts.ru/import/forum.css";
-@import "http://webfonts.ru/import/bicubik.css";
-@import "http://webfonts.ru/import/beermoney.css";
-@import "http://webfonts.ru/import/alegreyasans.css";
-@import "http://webfonts.ru/import/dancingscript.css";
 @font-face {
-  font-family: Connoisseurs;
-  src: url("../../fonts/Connoisseurs.otf");
-  src: url("../../fonts/Connoisseurs.ttf"); }
+  font-family: Beer money;
+  src: url("../../fonts/beermoney/beer money.ttf"); }
 @font-face {
-  font-family: Divine Razier;
-  src: url("../../fonts/Divine%20Razier.otf"); }
+  font-family: Bicubik;
+  src: url("../../fonts/bicubik/Bicubik.otf"); }
 @font-face {
-  font-family: Fairytales Script Swashes;
-  src: url("../../fonts/Fairytales%20Script%20Swashes.otf");
-  src: url("../../fonts/Fairytales%20Script%20Swashes.ttf"); }
+  font-family: Forum;
+  src: url("../../fonts/forum/Forum-Regular.otf"); }
 @font-face {
-  font-family: Fairytales Script;
-  src: url("../../fonts/Fairytales%20Script.otf");
-  src: url("../../fonts/Fairytales%20Script.ttf"); }
+  font-family: AshleyCapitaliSofia;
+  src: url("../../fonts/ashley/AshleyCapitaliSofia.otf"); }
 @font-face {
-  font-family: Higher;
-  src: url("../../fonts/Higher.otf");
-  src: url("../../fonts/Higher.ttf"); }
+  font-family: Dancing Script;
+  src: url("../../fonts/dancingscript/dancingscriptot.ttf"), url("../../fonts/dancingscript/dancingscriptot.woff"), url("../../fonts/dancingscript/dancingscriptot.woff2"); }
 @font-face {
-  font-family: Connoisseurs;
-  src: url("../../fonts/Connoisseurs.otf");
-  src: url("../../fonts/Connoisseurs.ttf"); }
+  font-family: Alegreya Sans;
+  src: url("../../fonts/alegreyasanssc/AlegreyaSansSC-Black.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-BlackItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Bold.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-BoldItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-ExtraBold.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-ExtraBoldItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Italic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Light.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-LightItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Medium.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-MediumItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Regular.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Thin.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-ThinItalic.otf"); }
 @font-face {
-  font-family: Divine Razier;
-  src: url("../../fonts/Divine%20Razier.otf"); }
+  font-family: Corki;
+  src: url("../../fonts/corki/corki.css"), url("../../fonts/corki/corki.woff"), url("../../fonts/corki/corki.woff2"); }
 @font-face {
-  font-family: Fairytales Script Swashes;
-  src: url("../../fonts/Fairytales%20Script%20Swashes.otf");
-  src: url("../../fonts/Fairytales%20Script%20Swashes.ttf"); }
-@font-face {
-  font-family: Fairytales Script;
-  src: url("../../fonts/Fairytales%20Script.otf");
-  src: url("../../fonts/Fairytales%20Script.ttf"); }
+  font-family: Dehuti;
+  src: url("../../fonts/dehuti/Dehuti-Bold-Italic.otf"), url("../../fonts/dehuti/Dehuti-Bold.otf"), url("../../fonts/dehuti/Dehuti-Book.otf"), url("../../fonts/dehuti/Dehuti-Italic.otf"); }
 @font-face {
   font-family: Higher;
-  src: url("../../fonts/Higher.otf");
-  src: url("../../fonts/Higher.ttf"); }
-/*
-	Bicubik, 400
-*/
+  src: url("../../fonts/Higher/Higher.otf"), url("../../fonts/Higher/Higher.ttf"); }
+@font-face {
+  font-family: Sweet;
+  src: url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.eot"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.otf"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.svg"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.ttf"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.woff"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.woff2"); }
+@font-face {
+  font-family: Beer money;
+  src: url("../../fonts/beermoney/beer money.ttf"); }
+@font-face {
+  font-family: Bicubik;
+  src: url("../../fonts/bicubik/Bicubik.otf"); }
+@font-face {
+  font-family: Forum;
+  src: url("../../fonts/forum/Forum-Regular.otf"); }
+@font-face {
+  font-family: AshleyCapitaliSofia;
+  src: url("../../fonts/ashley/AshleyCapitaliSofia.otf"); }
+@font-face {
+  font-family: Dancing Script;
+  src: url("../../fonts/dancingscript/dancingscriptot.ttf"), url("../../fonts/dancingscript/dancingscriptot.woff"), url("../../fonts/dancingscript/dancingscriptot.woff2"); }
+@font-face {
+  font-family: Alegreya Sans;
+  src: url("../../fonts/alegreyasanssc/AlegreyaSansSC-Black.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-BlackItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Bold.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-BoldItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-ExtraBold.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-ExtraBoldItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Italic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Light.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-LightItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Medium.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-MediumItalic.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Regular.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-Thin.otf"), url("../../fonts/alegreyasanssc/AlegreyaSansSC-ThinItalic.otf"); }
+@font-face {
+  font-family: Corki;
+  src: url("../../fonts/corki/corki.css"), url("../../fonts/corki/corki.woff"), url("../../fonts/corki/corki.woff2"); }
+@font-face {
+  font-family: Dehuti;
+  src: url("../../fonts/dehuti/Dehuti-Bold-Italic.otf"), url("../../fonts/dehuti/Dehuti-Bold.otf"), url("../../fonts/dehuti/Dehuti-Book.otf"), url("../../fonts/dehuti/Dehuti-Italic.otf"); }
+@font-face {
+  font-family: Higher;
+  src: url("../../fonts/Higher/Higher.otf"), url("../../fonts/Higher/Higher.ttf"); }
+@font-face {
+  font-family: Sweet;
+  src: url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.eot"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.otf"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.svg"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.ttf"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.woff"), url("../../fonts/Sweet%20Ink%20Font%20Calligraphy/Sweet_Ink.woff2"); }
 .tabTop {
   margin: 10px;
   height: auto;
@@ -516,7 +527,8 @@ li.active {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block; }
+  display: block;
+  min-height: 540px; }
 
 .fioFrame {
   display: -webkit-box;
@@ -582,18 +594,24 @@ li.active {
   margin: auto;
   padding: 0px;
   width: 100px;
-  text-align: center; }
+  text-align: center;
+  line-height: 100%; }
 
 .contentText {
+  font-family: Dehuti;
+  font-size: 34px;
   margin: auto;
   padding: 0px;
   min-width: 200px;
   width: 98%;
   height: 100%;
-  border: 0; }
+  border: 0;
+  outline: none; }
 
 .fioPhoto {
-  border: 1px solid blue;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 3px 3px 8px grey;
   width: 300px;
   height: auto;
   display: -webkit-box;
@@ -613,8 +631,6 @@ li.active {
 .photoFileFrame {
   border: 1px solid black;
   border-radius: 180px;
-  background-color: black;
-  box-shadow: inset 0px 0px 20px black;
   overflow: hidden;
   width: 260px;
   height: 260px;
@@ -633,6 +649,41 @@ li.active {
   bottom: 4px;
   width: 104%;
   height: 104%; }
+
+.rbGender {
+  display: none; }
+
+.rbMStatus {
+  display: none; }
+
+.btnSet {
+  border: 1px solid blue;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 26px;
+  width: 40%;
+  height: 26px;
+  margin: auto;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
+  background-color: blue;
+  color: white; }
+  .btnSet:hover {
+    background-color: white;
+    color: blue; }
+
+.btnSetActive {
+  background-color: white;
+  color: blue; }
+
+.cityList {
+  width: 96%; }
+
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 body {
   background-image: url("../../image/main_bg.jpg");
@@ -682,7 +733,7 @@ body {
   font-family: Alegreya Sans;
   font-size: 16px;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   text-align: start;
   overflow: hidden;
   height: auto; }

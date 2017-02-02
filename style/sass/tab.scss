@@ -1,9 +1,6 @@
 
 @import "tools";
-@import "http://webfonts.ru/import/bicubik.css";
-/*
-	Bicubik, 400
-*/
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -96,7 +93,7 @@ li.active{
 ///  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  /// 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-@import "http://webfonts.ru/import/beermoney.css";
+
 
 $widthMark: 80px;
 $heightMark: 150px;
@@ -483,10 +480,12 @@ $borderTotal: 4px;
 .boxContentActive{
 	display: flex;
 	display: block;
-
+	min-height: 540px;
+	
 }
 
 /////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+$radius: 30px;
 
 .fioFrame{
 	display: flex;
@@ -514,8 +513,6 @@ $borderTotal: 4px;
 	}
 }
 
-$radius: 30px;
-
 .rowMainTitle{
 	border: 1px solid blue;
 	border-radius: $radius 0 0 $radius;
@@ -538,23 +535,25 @@ $radius: 30px;
 	padding: 0px;
 	width: 100px;
 	text-align: center;
-
+	line-height: 100%;
 }
 
 .contentText{
+	font-family: Dehuti;
+	font-size: 34px;
 	margin: auto;
 	padding: 0px;
 	min-width: 200px;
 	width: 98%;
 	height: 100%; 
 	border: 0;
+	outline: none;
 }
 
-
-
-
 .fioPhoto{
-	border: 1px solid blue;
+	border: 1px solid black;
+	border-radius: 3px;
+	box-shadow: 3px 3px 8px grey;
 	width: 300px;
 	height: auto;
 	display: flex;
@@ -565,8 +564,6 @@ $radius: 30px;
 .photoFileFrame{
 	@include br();
 	border-radius: 180px;
-	background-color: black;
-	box-shadow: inset 0px 0px 20px black;
 	overflow: hidden;
 	width: 260px;
 	height: 260px;
@@ -591,12 +588,46 @@ $radius: 30px;
 	
 }
 
+.rbGender{
+	display: none;
+}
 
+.rbMStatus{
+	display: none;
+}
 
+.btnSet{
+	border: 1px solid blue;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 26px;
+	width: 40%;
+	height: 26px;
+	margin: auto;
+	cursor: pointer;
+	transition: all 300ms ease-in-out;
+	background-color: blue;
+	color: white;
+	&:hover{
+		background-color: white;
+		color: blue;
+	}
+}
 
+.btnSetActive{
+	background-color: white;
+	color: blue;
+}
 
+.cityList{
+	width: 96%;
+}
 
-
+.ui-autocomplete{
+	max-height: 200px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
 
 
 

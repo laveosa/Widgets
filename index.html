@@ -4,7 +4,14 @@
 	<meta charset="UTF-8">
 	<title>widgets</title>
 	<link rel="stylesheet" type="text/css" href="style/css/main_dress.css">
+	<link rel="stylesheet" type="text/css" href="fonts/dancingscript/dancingscript.css">
+	<link rel="stylesheet" type="text/css" href="fonts/corki/corki.css">
+	<link rel="stylesheet" type="text/css" href="frameW/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="frameW/jquery-ui.structure.css">
+	<link rel="stylesheet" type="text/css" href="frameW/jquery-ui.theme.css">
 	<script src="jquery-3.1.1.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="frameW/jquery-ui.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="js/libraryData.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="js/main_brain.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
@@ -179,47 +186,61 @@
 								<div class="fioRow">
 									<div id="row_1" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">name</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="name" class="contentText" placeholder="enter your name..." title="Albert"></div>
 									</div>
 									<div id="row_2" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">family</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="family" class="contentText" placeholder="enter your family name..." title="Einstein"></div>
 									</div>
 									<div id="row_3" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">position</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="position" class="contentText" placeholder="enter your position..." title="Theoretical Physicist"></div>
 									</div>
 									<div id="row_4" class="rowMain">
-										<div class="rowMainTitle"><p class="titleText">sex</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainTitle"><p class="titleText">gender</p></div>
+										<div id="gender_block" class="rowMainContent"  data-type="gender">
+											<label id="male" class="btnSet">male
+												<input class="rbGender" type="radio" name="gender" value="male">
+											</label>
+											<label id="fimale" class="btnSet">fimale
+												<input class="rbGender" type="radio" name="gender" value="fimale">
+											</label>
+										</div>
 									</div>
 									<div id="row_5" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">marital status</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div id="married_block" class="rowMainContent"  data-type="maritalS">
+											<label id="single" class="btnSet">single
+												<input class="rbMStatus" type="radio" name="MStatus" value="single">
+											</label>
+											<label id="married" class="btnSet">married
+												<input class="rbMStatus" type="radio" name="MStatus" value="married">
+											</label>
+										</div>
 									</div>
 									<div id="row_6" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">city</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="city" class="contentText" placeholder="enter your city..." title="Ulm"></div>
 									</div>
 									<div id="row_7" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">phone</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="phone" class="contentText" placeholder="enter your phone number..." title="+55 11 2151-1233"></div>
 									</div>
 									<div id="row_8" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">email</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="email" class="contentText" placeholder="enter your email..." title="albert_einstein@yahoo.com"></div>
 									</div>
 									<div id="row_9" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">skayp</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="skayp" class="contentText" placeholder="enter your skayp..." title="Albertushka"></div>
 									</div>
 									<div id="row_10" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">git</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="git" class="contentText" placeholder="enter url git repository..." title="https://github.com/lksj/einstein-puzzle"></div>
 									</div>
 									<div id="row_11" class="rowMain">
 										<div class="rowMainTitle"><p class="titleText">web</p></div>
-										<div class="rowMainContent"><input type="text" class="contentText"></div>
+										<div class="rowMainContent"><input type="text" data-type="web" class="contentText" placeholder="enter url of your website..." title="https://www.facebook.com/Albert.Einstein.14march/"></div>
 									</div>
 								</div>
 								<div class="fioPhoto">
@@ -248,8 +269,6 @@
 	
 </body>
 </html>
-
-
 
 
 
