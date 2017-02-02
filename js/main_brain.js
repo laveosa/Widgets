@@ -123,14 +123,14 @@
 			$(this).addClass("btnSetActive");
 		});
 
-		$("#gender_block .btnSet").eq(0).click();
+		$(".rbGender[value=male]").eq(0).click();
 
 		$("#married_block .btnSet").on("click", function(){
 			$("#married_block .btnSet").removeClass("btnSetActive");
 			$(this).addClass("btnSetActive");
 		});
 
-		$("#married_block .btnSet").eq(0).click();
+		$(".rbMStatus[value=single]").eq(0).click();
 
 		$("#row_6 .contentText").autocomplete({
 			source: itLanguages,
@@ -145,13 +145,48 @@
 			hide: {effect: "explode", duration: 300}
 		});
 
+		$(".fileUpload input[type=file]").on("change", function(){
+			// if ($(this).val().lastIndexOf('\\')) {
+			// 	var n = $(this).val().lastIndexOf('\\') + 1;
+			// } else {
+			// 	var n = $(this).val().lastIndexOf('/') + 1;
+			// }
+			// var fileName = $(this).val().slice(n);
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+			// $(".imgFile").attr("src", $(this).val());
 
-    $(".contentText[data-type=name]").on("change", function(){
-    	validationCheck(this);
-    	
-    });	
+			localStorage.removeItem("img");
+
+			console.log($(this).val());
+
+		});
+
+		//////////////////////////////////////////////////////////////////////////////////////////////////////
+		////   check_alidation   check_alidation   check_alidation   check_alidation   check_alidation   /////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    var elem = $(".rowMain");
+    for (var i = 0; i <= elem.length; i++) 
+    	$("#row_"+i+" .contentText").on("change", function(){
+    		validationCheck(this);});
+    
+    $(".rbGender[value=male]").on("click", function(){   
+    	infoTest.setGender("male");
+    	console.log(infoTest.getGender());
+    });
+    $(".rbGender[value=fimale]").on("click", function(){   
+    	infoTest.setGender("fimale");
+    	console.log(infoTest.getGender());
+    });
+
+    $(".rbMStatus[value=single]").on("click", function(){
+    	infoTest.setMaritalStatus("single");
+    	console.log(infoTest.getMaritalStatus());
+    });
+    $(".rbMStatus[value=married]").on("click", function(){
+    	infoTest.setMaritalStatus("merried");
+    	console.log(infoTest.getMaritalStatus());
+    });
 
     function validationCheck(obj){
     	if($(obj).val().length == 0)
@@ -177,6 +212,39 @@
     			else
     				$(obj).css({backgroundColor: 'tomato'});
     			break;	
+    			case "phone":
+    			if(infoTest.setPhone($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;
+    			case "city":
+    			infoTest.setCity($(obj).val());	
+    			break;
+    			case "email":
+    			if(infoTest.setEmail($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;
+    			case "skayp":
+    			if(infoTest.setSkayp($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;
+    			case "git":
+    			if(infoTest.setGit($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;
+    			case "web":
+    			if(infoTest.setWeb($(obj).val()))
+    				$(obj).css({backgroundColor: 'lightgreen'});
+    			else
+    				$(obj).css({backgroundColor: 'tomato'});
+    			break;
     		}
     	}
     }
@@ -189,36 +257,91 @@
 })();
 
 function hrManager(){
-	var patternTextOnly = /^[a-zA-Z]{2,20}$/;
+	var patternName = /^[a-zA-Z]{2,20}$/;
+	var patternFamily = /^[a-zA-Z\-]{2,40}$/;
+	var patternPosition = /^[a-zA-Z\-().#]{2,40}$/;
+	var patternPhone = /^[0-9\-+()]{6,20}$/;
 	var patternEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var patternUrl = /^(ftp|http|https):\/\/[^ "]+\.[a-z]{1,4}$/;
+	
 
 	var _name;
 	var _family;
 	var _position;
-	var _gender;
-	var _maritalStatus;
+	var _gender = "male";
+	var _maritalStatus = "single";
 	var _city;
 	var _phone;
 	var _email;
-	var _skayp;
+	var _skayp; 
 	var _git;
 	var _web;
 
-	this.setName = function(data){return patternTextOnly.test(data);};
-	this.getName = function(){return _name};
-	this.setFamily = function(data){return patternTextOnly.test(data);};
-	this.getFamily = function(){return _family};
-	this.setPosition = function(data){return patternTextOnly.test(data);};
-	this.getPosition = function(){return _position};
+	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
 
+	this.setName = function(data){
+		_name = undefined;
+		if(patternName.test(data)) _name = data;
+		return patternName.test(data);
+	};
+	this.getName = function(){return _name}
+
+	this.setFamily = function(data){
+		_family = undefined;
+		if(patternFamily.test(data)) _family = data;
+		return patternFamily.test(data);
+	};
+	this.getFamily = function(){return _family}
+
+	this.setPosition = function(data){
+		_position = undefined;
+		if(patternPosition.test(data)) _position = data;
+		return patternPosition.test(data);
+	};
+	this.getPosition = function(){return _position}
+
+	this.setGender = function(data){_gender = data;}
+	this.getGender = function(){return _gender;}
+
+	this.setMaritalStatus = function(data){_maritalStatus = data;}
+	this.getMaritalStatus = function(){return _maritalStatus;}
+
+	this.setCity = function(data){_city = data;}
+	this.getCity = function(){return _city;}
+
+	this.setPhone = function(data){
+		_phone = undefined;
+		if(patternPhone.test(data)) _phone = data;
+		return patternPhone.test(data);
+	}
+	this.getPhone = function(){return _phone;}
+
+	this.setEmail = function(data){
+		_email = undefined;
+		if(patternEmail.test(data)) _email = data;
+		return patternEmail.test(data);
+	}
+	this.getEmail = function(){return _email;}
+
+	this.setSkayp = function(data){_skayp = data; return true;}
+	this.getSkayp = function(){return _skayp;}
+
+	this.setGit = function(data){
+		_git = undefined;
+		if(patternUrl.test(data)) _git = data;
+		return patternUrl.test(data);
+	}
+	this.getGit = function(){return _git;}
+
+	this.setWeb = function(data){
+		_web = undefined;
+		if(patternUrl.test(data)) _web = data;
+		return patternUrl.test(data);
+	}
+	this.getWeb = function(){return _data;}
+
+	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
 }
-
-
-
-
-
-
-
 
 
 

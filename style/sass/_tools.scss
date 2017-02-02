@@ -113,23 +113,51 @@
 	
 }
 
-@mixin tend(){
-	@include br(1px, solid, red);
-	padding: 1px;
+@mixin tend($brSize: 1px, $padding: 1px){
+	@include br($brSize, solid, black);
+	padding: $padding;
 	& *{
-		@include br(1px, solid, green);
-		padding: 1px;
+		@include br($brSize, solid, blue);
+		padding: $padding;
 	}
 	& div{
-		@include br(1px, solid, blue);
+		@include br($brSize, solid, black);
+		padding: $padding;
 	}
 	& input{
-		@include br(1px, solid, violet);
+		@include br($brSize, solid, violet);
+		padding: $padding;
 	}
 	& p{
-		@include br(1px, solid, black);
+		@include br($brSize, solid, red);
+		padding: $padding;
+	}
+	& span{
+		@include br($brSize, solid, #AA3B3B);
+		padding: $padding;
+	}
+	& ul{
+		@include br($brSize, solid, darkgreen);
+		padding: $padding;
+	}
+	& ol{
+		@include br($brSize, solid, darkgreen);
+		padding: $padding;
+	}
+	& li{
+		@include br($brSize, solid, lightgreen);
+		padding: $padding;
+	}
+	& table{
+		@include br($brSize, solid, #07D0C9);
+		padding: $padding;	
+	}
+	& img{
+		@include br($brSize, solid, #8B0CC6);
+		padding: $padding;	
 	}
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ////    animation    animation    animation    animation    animation    animation      ///
