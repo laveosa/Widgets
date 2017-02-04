@@ -184,14 +184,16 @@
     	infoTest.setGender("male");
     	$(".imgFile").attr('src', 'image/male_photo.jpg');
     });
+
     $(".rbGender[value=fimale]").on("click", function(){   
     	infoTest.setGender("fimale");
     	$(".imgFile").attr('src', 'image/fimale_photo.jpg');
     });
-		$(".rbMStatus[value=single]").on("click", function(){
+
+    $(".rbMStatus[value=single]").on("click", function(){
     	infoTest.setMaritalStatus("single");
-    	
     });
+
     $(".rbMStatus[value=married]").on("click", function(){
     	infoTest.setMaritalStatus("merried");
     });
@@ -214,15 +216,73 @@
     			else
     				infoTest.setExperience(par, obj);
     		}
-			}
-		});
+    	}
+    });
 
-		$("#about_cont_2 .textSkills").on("change", function(){
-			if($(this).val().length == 0) 
+    $("#about_cont_2 .textSkills").on("change", function(){
+    	if($(this).val().length == 0) 
     		$(this).css({backgroundColor: "white"});
     	else
     		infoTest.setSkills($(this).val());
     });
+
+		////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+		////  languages_set  languages_set  languages_set  languages_set  languages_set  languages_set  languages_set   ///
+    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+
+    $("#english select").on("change", function(){
+    	var obj = {
+    		key: "English",
+    		value: $(this).val() 
+    	};
+    	infoTest.setLanguage(0, obj);
+    });
+    $("#english select").change();
+
+    $("#other_1 select[name=other_1]").on("change", function(){
+    	var obj={};
+    	if($(this).val() == "none"){
+    		obj.key = "none";
+    		obj.value = "none";
+    	}
+    	else{
+    		obj.key = $(this).val();
+    		obj.value = $("#other_1 select[name=language-level]").val();
+    	}
+    	infoTest.setLanguage(1, obj);
+    });
+    $("#other_1 select[name=language-level]").on("change", function(){
+    	if($("#other_1 select[name=other_1]").val() != "none"){
+    		var obj = {
+    			key: $("#other_1 select[name=other_1]").val(),
+    			value: $(this).val()
+    		};
+    		infoTest.setLanguage(1, obj);	
+    	}
+    });
+
+    $("#other_2 select[name=other_2]").on("change", function(){
+    	var obj={};
+    	if($(this).val() == "none"){
+    		obj.key = "none";
+    		obj.value = "none";
+    	}
+    	else{
+    		obj.key = $(this).val();
+    		obj.value = $("#other_2 select[name=language-level]").val();
+    	}
+    	infoTest.setLanguage(2, obj);
+    });
+    $("#other_2 select[name=language-level]").on("change", function(){
+    	if($("#other_2 select[name=other_2]").val() != "none"){
+    		var obj = {
+    			key: $("#other_2 select[name=other_2]").val(),
+    			value: $(this).val()
+    		};
+    		infoTest.setLanguage(2, obj);	
+    	}
+    });
+
 
     function validationCheck(obj){
     	if($(obj).val().length == 0)
@@ -286,6 +346,7 @@
     }
 
   });
+
 })();
 
 function hrManager(){
@@ -311,6 +372,12 @@ function hrManager(){
 	var _skills;
 	var _education = new Array();
 	var _experience = new Array();
+	var _language = new Array();
+	var _goal;
+	var _highlights;
+	var _additional_information;
+	var _hobby;
+
 
 	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
 
@@ -383,6 +450,21 @@ function hrManager(){
 
 	this.setExperience = function(key, data){_experience[key] = data;}
 	this.getExperience = function(){return _experience;}	
+
+	this.setLanguage = function(key, data){_language[key] = data;}
+	this.getLanguage = function(){return _language;}
+
+	this.setGoal = function(data){_goal = data;}
+	this.getData = function(){return _goal;}
+
+	this.setHighlights = function(data){_highlights = data;}
+	this.getHighlights = function(){return _highlights;}
+
+	this.setAdditionalInformation = function(data){_additional_information = data;}
+	this.getAdditionalInformation = function(){return _additional_information;}
+
+	this.setHobby = function(data){_hobby = data;}
+	this.getHobby = function(){return _hobby;}
 
 	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
 
