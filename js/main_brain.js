@@ -48,7 +48,6 @@
 	});
 })();
 
-
 (function(){
 	window.addEventListener("load", function(){
 		$(".bookMark").on("click", function(){
@@ -133,7 +132,7 @@
 		$(".rbMStatus[value=single]").eq(0).click();
 
 		$("#row_6 .contentText").autocomplete({
-			source: itLanguages,
+			source: cityNameList,
 			delay: 300,
 			max: 6,
 			minLength: 1
@@ -163,16 +162,16 @@
 
 		$(".fileUpload input[type=file]").on("change", function(){
 			
-			//////////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////////////////
 			//////
 			//////     in progress   :)   in progress  :)   in progress  :)   in progress  
 			//////
-			//////////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////////////////
 
 		});
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////
-		////   check_validation   check_validation   check_validation   check_validation   check_validation   /////
+		////     check_events_and_validation   check_events_and_validation   check_events_and_validation      /////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     var elem = $(".rowMain");
@@ -198,18 +197,31 @@
     });
 
     $(".textTable").on("change", function(){
-    	if($(this).length == 0) 
+    	if($(this).val().length == 0) 
     		$(this).css({backgroundColor: "white"});
     	else{
     		var par = "#" + $(this).parents("tr").attr("id");
     		var dateFrom = $(par+" input[type=date]").eq(0).val();
     		var dateTo = $(par+" input[type=date]").eq(1).val();
 
-    		console.log(dateFrom);
-        console.log(dateTo);
+    		if(dateFrom != undefined && dateTo != undefined){
+    			var obj = {
+    				key: dateFrom+"/"+dateTo,
+    				value: $(this).val() 
+    			};
+    			if(par.slice(-1) < 4)
+    				infoTest.setEducation(par, obj);
+    			else
+    				infoTest.setExperience(par, obj);
+    		}
+			}
+		});
 
-    	}
-
+		$("#about_cont_2 .textSkills").on("change", function(){
+			if($(this).val().length == 0) 
+    		$(this).css({backgroundColor: "white"});
+    	else
+    		infoTest.setSkills($(this).val());
     });
 
     function validationCheck(obj){
@@ -273,10 +285,6 @@
     	}
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    ////   parser   parser   parser   parser   parser   parser   parser   parser   parser   parser  ///
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
   });
 })();
 
@@ -300,6 +308,9 @@ function hrManager(){
 	var _skayp; 
 	var _git;
 	var _web;
+	var _skills;
+	var _education = new Array();
+	var _experience = new Array();
 
 	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
 
@@ -363,6 +374,15 @@ function hrManager(){
 		return patternUrl.test(data);
 	}
 	this.getWeb = function(){return _data;}
+
+	this.setSkills = function(data){_skills = data;}
+	this.getSkills = function(){return _skills;}
+
+	this.setEducation = function(key, data){_education[key] = data;}
+	this.getEducation = function(){return _education;}
+
+	this.setExperience = function(key, data){_experience[key] = data;}
+	this.getExperience = function(){return _experience;}	
 
 	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
 
