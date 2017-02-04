@@ -145,47 +145,71 @@
 			hide: {effect: "explode", duration: 300}
 		});
 
+		$(".fileUpload").hover(
+			function(){ 
+				if(infoTest.getGender() == "male")
+					$(".imgFile").attr("src", "image/male_photo_hover.jpg");
+				else
+					$(".imgFile").attr("src", "image/fimale_photo_hover.jpg");
+
+			},
+			function(){
+				if(infoTest.getGender() == "male")
+					$(".imgFile").attr("src", "image/male_photo.jpg");
+				else
+					$(".imgFile").attr("src", "image/fimale_photo.jpg");
+
+			});
+
 		$(".fileUpload input[type=file]").on("change", function(){
-			// if ($(this).val().lastIndexOf('\\')) {
-			// 	var n = $(this).val().lastIndexOf('\\') + 1;
-			// } else {
-			// 	var n = $(this).val().lastIndexOf('/') + 1;
-			// }
-			// var fileName = $(this).val().slice(n);
-
-			// $(".imgFile").attr("src", $(this).val());
-
-			localStorage.removeItem("img");
-
-			console.log($(this).val());
+			
+			//////////////////////////////////////////////////////////////////////////
+			//////
+			//////     in progress   :)   in progress  :)   in progress  :)   in progress  
+			//////
+			//////////////////////////////////////////////////////////////////////////
 
 		});
 
-		//////////////////////////////////////////////////////////////////////////////////////////////////////
-		////   check_alidation   check_alidation   check_alidation   check_alidation   check_alidation   /////
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////   check_validation   check_validation   check_validation   check_validation   check_validation   /////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     var elem = $(".rowMain");
+    
     for (var i = 0; i <= elem.length; i++) 
     	$("#row_"+i+" .contentText").on("change", function(){
     		validationCheck(this);});
     
     $(".rbGender[value=male]").on("click", function(){   
     	infoTest.setGender("male");
-    	console.log(infoTest.getGender());
+    	$(".imgFile").attr('src', 'image/male_photo.jpg');
     });
     $(".rbGender[value=fimale]").on("click", function(){   
     	infoTest.setGender("fimale");
-    	console.log(infoTest.getGender());
+    	$(".imgFile").attr('src', 'image/fimale_photo.jpg');
     });
-
-    $(".rbMStatus[value=single]").on("click", function(){
+		$(".rbMStatus[value=single]").on("click", function(){
     	infoTest.setMaritalStatus("single");
-    	console.log(infoTest.getMaritalStatus());
+    	
     });
     $(".rbMStatus[value=married]").on("click", function(){
     	infoTest.setMaritalStatus("merried");
-    	console.log(infoTest.getMaritalStatus());
+    });
+
+    $(".textTable").on("change", function(){
+    	if($(this).length == 0) 
+    		$(this).css({backgroundColor: "white"});
+    	else{
+    		var par = "#" + $(this).parents("tr").attr("id");
+    		var dateFrom = $(par+" input[type=date]").eq(0).val();
+    		var dateTo = $(par+" input[type=date]").eq(1).val();
+
+    		console.log(dateFrom);
+        console.log(dateTo);
+
+    	}
+
     });
 
     function validationCheck(obj){
@@ -341,6 +365,8 @@ function hrManager(){
 	this.getWeb = function(){return _data;}
 
 	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
+
+
 }
 
 

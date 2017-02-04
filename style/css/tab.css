@@ -383,7 +383,8 @@ li.active {
 
 .boxContent {
   display: flex;
-  display: none; }
+  display: none;
+  height: 800px; }
 
 .boxContentActive {
   display: flex;
@@ -391,6 +392,7 @@ li.active {
   min-height: 540px; }
 
 .fioFrame {
+  height: 100%;
   display: flex;
   flex-direction: row; }
   .fioFrame > div {
@@ -400,7 +402,10 @@ li.active {
     flex-direction: column; }
 
 .fioRow {
-  flex-grow: 2; }
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around; }
 
 .rowMain {
   width: auto;
@@ -468,6 +473,7 @@ li.active {
 
 .imgFile {
   position: relative;
+  border-radius: 180px;
   right: 4px;
   bottom: 4px;
   width: 104%;
@@ -506,5 +512,145 @@ li.active {
   max-height: 200px;
   overflow-y: scroll;
   overflow-x: hidden; }
+
+.necessaryMark {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  color: red;
+  font-size: 26px;
+  font-weight: bold; }
+
+.fileTip, .tip_1, .tip_2 {
+  color: blue;
+  display: block;
+  position: relative; }
+
+.tip_2 {
+  top: 50%;
+  bottom: 0px;
+  right: 20px;
+  align-self: flex-end; }
+  .tip_2 span {
+    position: relative;
+    top: 10px;
+    color: red;
+    font-size: 26px; }
+
+.aboutContFrame {
+  margin: 10px;
+  border-radius: 6px;
+  border: 1px solid blue;
+  background-color: blue; }
+  .aboutContFrame * {
+    margin: 0px;
+    padding: 0px; }
+  .aboutContFrame p {
+    color: white;
+    margin: 4px; }
+
+#about_cont_2.aboutContFrame {
+  height: 360px; }
+  #about_cont_2.aboutContFrame textarea {
+    height: 92%; }
+
+.tableFrame {
+  border: 1px solid black;
+  background-color: #FFF; }
+
+.aboutTitle {
+  color: blue; }
+
+.totalTable {
+  width: 100%;
+  color: blue; }
+  .totalTable tr th:first-child {
+    width: 300px; }
+  .totalTable td {
+    overflow: hidden; }
+
+.textTable {
+  width: 100%;
+  height: 100%;
+  font-family: Dehuti;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: start; }
+
+.textSkills {
+  width: 100%;
+  min-height: 10px;
+  resize: none;
+  font-family: Dehuti;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: start; }
+
+#about_table_1 tr:nth-child(1) {
+  background-color: #C3C2DC; }
+#about_table_1 tr:nth-child(2) {
+  background-color: #9A98BF; }
+#about_table_1 tr:nth-child(3) {
+  background-color: #C3C2DC; }
+#about_table_1 tr:nth-child(4) {
+  background-color: #9A98BF; }
+
+#about_table_2 tr:nth-child(1) {
+  background-color: #C3C2DC; }
+#about_table_2 tr:nth-child(2) {
+  background-color: #9A98BF; }
+#about_table_2 tr:nth-child(3) {
+  background-color: #C3C2DC; }
+#about_table_2 tr:nth-child(4) {
+  background-color: #9A98BF; }
+
+#box_content_3.boxContent {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+#goal.aboutContFrame,
+#highlights.aboutContFrame,
+#additional_information.aboutContFrame,
+#hobby.aboutContFrame {
+  height: 150px;
+  max-height: 150px;
+  overflow: hidden;
+  position: relative; }
+  #goal.aboutContFrame textarea,
+  #highlights.aboutContFrame textarea,
+  #additional_information.aboutContFrame textarea,
+  #hobby.aboutContFrame textarea {
+    height: 110px; }
+
+.language {
+  min-width: 280px;
+  min-height: 10px;
+  margin: 4px;
+  background-color: #FFF;
+  border: 1px solid black; }
+
+.infoStyle {
+  height: 100px; }
+
+.infoContent {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .infoContent div {
+    flex-grow: 1; }
+  .infoContent select {
+    width: 100px; }
+    .infoContent select option {
+      max-height: 10px; }
+
+.ll {
+  font-family: Dehuti;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: start; }
 
 /*# sourceMappingURL=tab.css.map */

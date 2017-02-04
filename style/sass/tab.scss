@@ -4,7 +4,9 @@
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-///   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab  /// 
+///                                                                                      ///     
+///   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab   first-tab  ///
+///                                                                                      /// 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 $mainMargin: 10px;
@@ -90,7 +92,9 @@ li.active{
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-///  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  /// 
+///                                                                                      ///
+///  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  tab-sticer  ///
+///                                                                                      ///  
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -311,7 +315,9 @@ $markUp: 6px;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-///  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark   /// 
+///                                                                                             ///        
+///  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark  tab-dark   ///
+///                                                                                             ///    
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 .activeMark{
@@ -393,10 +399,14 @@ $markUp: 6px;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////                                                                                                      ////      
 ////    storageBox    storageBox    storageBox    storageBox    storageBox    storageBox    storageBox    ////
+////                                                                                                      ////    
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $borderTotal: 4px;
+$storagrBoxMainHight: 800px;
+$content-brd-radius: 6px;
 
 .storageBox{
 	margin: $mainMargin;
@@ -474,7 +484,7 @@ $borderTotal: 4px;
 .boxContent{
 	display: flex;
 	display: none;
-
+	height: $storagrBoxMainHight;
 }
 
 .boxContentActive{
@@ -485,9 +495,12 @@ $borderTotal: 4px;
 }
 
 /////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+/////   set:1   set:1   set:1   set:1   set:1   set:1   set:1   set:1   set:1   set:1   set:1   set:1   set:1  /////
+/////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 $radius: 30px;
 
 .fioFrame{
+	height: 100%;
 	display: flex;
 	flex-direction: row;
 	&>div{
@@ -501,6 +514,9 @@ $radius: 30px;
 
 .fioRow{
 	flex-grow: 2;
+	display: flex;
+	justify-content: space-around;
+	align-items: space-around;
 }
 
 .rowMain{
@@ -581,6 +597,7 @@ $radius: 30px;
 
 .imgFile{
 	position: relative;
+	border-radius: 180px;
 	right: 4px;
 	bottom: 4px;
 	width: 104%;
@@ -628,6 +645,239 @@ $radius: 30px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+
+.necessaryMark{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	color: red;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.fileTip{
+	color: blue;
+	display: block;
+	position: relative;
+}
+
+.tip_1{
+	@extend .fileTip;
+
+}
+
+.tip_2{
+	@extend .fileTip;
+	top: 50%;
+	bottom: 0px;
+	right: 20px;
+	align-self: flex-end;
+	& span{
+		position: relative;
+		top: 10px;
+		color: red;
+		font-size: 26px;
+	}
+}
+
+
+/////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+/////   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2  /////
+/////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+
+
+.aboutContFrame{
+	margin: $mainMargin;
+	border-radius: $content-brd-radius;
+	@include br(1px, solid, blue);
+	background-color: blue;
+	& *{
+		margin: 0px;
+		padding: 0px;
+	}
+	& p{
+		color: white;
+		margin: 4px;
+	}
+}
+
+#about_cont_2.aboutContFrame{
+	height: 360px;
+	& textarea{
+		height: 92%;
+	}
+}
+
+.tableFrame{
+	@include br();
+	background-color: #FFF;
+}
+
+.aboutTitle{
+	color: blue;
+}
+
+.totalTable{
+	width: 100%;
+	color: blue;
+	& tr th:first-child{
+		width: 300px;
+	}
+	& td{
+		overflow: hidden;
+	}
+	
+}
+
+.textTable{
+	width: 100%;
+	height: 100%;
+	@include font(Dehuti, 32px);
+}
+
+.textSkills{
+	width: 100%;
+	min-height: 10px;
+	resize: none;
+	@include font(Dehuti, 32px);
+}
+
+@for $i from 1 through 2{
+	#about_table_#{$i}{
+		@for $j from 1 through 4{
+			& tr:nth-child(#{$j}){
+				@if $j%2 == 0{
+					background-color: #9A98BF;
+				}
+				@else{
+					background-color: #C3C2DC;
+				}	
+			}
+
+		}	
+	}
+}
+
+
+
+/////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+/////   set:3   set:3   set:3   set:3   set:3   set:3   set:3   set:3   set:3   set:3   set:3   set:3   set:3  /////
+/////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+
+#box_content_3.boxContent{
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#goal.aboutContFrame,
+#highlights.aboutContFrame,
+#additional_information.aboutContFrame,
+#hobby.aboutContFrame{
+	height: 150px;
+	max-height: 150px;
+	overflow: hidden;
+	position: relative;
+	& textarea{
+		height: 110px;
+	}
+}
+
+
+.language{
+	min-width: 280px;
+	min-height: 10px;
+	margin: 4px;
+	background-color: #FFF;
+	@include br();
+}
+
+.infoStyle{
+	height: 100px;
+}
+
+.infoContent{
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	& div{
+		flex-grow: 1;
+	}
+	& select{
+		width: 100px;
+		// overflow-x: scroll;
+		& option{
+			max-height: 10px;
+		}
+	}
+}
+
+.ll{
+	@include font(Dehuti, 32px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

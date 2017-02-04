@@ -520,7 +520,8 @@ li.active {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: none; }
+  display: none;
+  height: 800px; }
 
 .boxContentActive {
   display: -webkit-box;
@@ -531,6 +532,7 @@ li.active {
   min-height: 540px; }
 
 .fioFrame {
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -557,7 +559,18 @@ li.active {
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
       -ms-flex-positive: 2;
-          flex-grow: 2; }
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: space-around;
+  -webkit-align-items: space-around;
+      -ms-flex-align: space-around;
+          align-items: space-around; }
 
 .rowMain {
   width: auto;
@@ -645,6 +658,7 @@ li.active {
 
 .imgFile {
   position: relative;
+  border-radius: 180px;
   right: 4px;
   bottom: 4px;
   width: 104%;
@@ -684,6 +698,160 @@ li.active {
   max-height: 200px;
   overflow-y: scroll;
   overflow-x: hidden; }
+
+.necessaryMark {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  color: red;
+  font-size: 26px;
+  font-weight: bold; }
+
+.fileTip, .tip_1, .tip_2 {
+  color: blue;
+  display: block;
+  position: relative; }
+
+.tip_2 {
+  top: 50%;
+  bottom: 0px;
+  right: 20px;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end; }
+  .tip_2 span {
+    position: relative;
+    top: 10px;
+    color: red;
+    font-size: 26px; }
+
+.aboutContFrame {
+  margin: 10px;
+  border-radius: 6px;
+  border: 1px solid blue;
+  background-color: blue; }
+  .aboutContFrame * {
+    margin: 0px;
+    padding: 0px; }
+  .aboutContFrame p {
+    color: white;
+    margin: 4px; }
+
+#about_cont_2.aboutContFrame {
+  height: 360px; }
+  #about_cont_2.aboutContFrame textarea {
+    height: 92%; }
+
+.tableFrame {
+  border: 1px solid black;
+  background-color: #FFF; }
+
+.aboutTitle {
+  color: blue; }
+
+.totalTable {
+  width: 100%;
+  color: blue; }
+  .totalTable tr th:first-child {
+    width: 300px; }
+  .totalTable td {
+    overflow: hidden; }
+
+.textTable {
+  width: 100%;
+  height: 100%;
+  font-family: Dehuti;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: start; }
+
+.textSkills {
+  width: 100%;
+  min-height: 10px;
+  resize: none;
+  font-family: Dehuti;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: start; }
+
+#about_table_1 tr:nth-child(1) {
+  background-color: #C3C2DC; }
+#about_table_1 tr:nth-child(2) {
+  background-color: #9A98BF; }
+#about_table_1 tr:nth-child(3) {
+  background-color: #C3C2DC; }
+#about_table_1 tr:nth-child(4) {
+  background-color: #9A98BF; }
+
+#about_table_2 tr:nth-child(1) {
+  background-color: #C3C2DC; }
+#about_table_2 tr:nth-child(2) {
+  background-color: #9A98BF; }
+#about_table_2 tr:nth-child(3) {
+  background-color: #C3C2DC; }
+#about_table_2 tr:nth-child(4) {
+  background-color: #9A98BF; }
+
+#box_content_3.boxContent {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+#goal.aboutContFrame,
+#highlights.aboutContFrame,
+#additional_information.aboutContFrame,
+#hobby.aboutContFrame {
+  height: 150px;
+  max-height: 150px;
+  overflow: hidden;
+  position: relative; }
+  #goal.aboutContFrame textarea,
+  #highlights.aboutContFrame textarea,
+  #additional_information.aboutContFrame textarea,
+  #hobby.aboutContFrame textarea {
+    height: 110px; }
+
+.language {
+  min-width: 280px;
+  min-height: 10px;
+  margin: 4px;
+  background-color: #FFF;
+  border: 1px solid black; }
+
+.infoStyle {
+  height: 100px; }
+
+.infoContent {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .infoContent div {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+  .infoContent select {
+    width: 100px; }
+    .infoContent select option {
+      max-height: 10px; }
+
+.ll {
+  font-family: Dehuti;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: start; }
 
 body {
   background-image: url("../../image/main_bg.jpg");
@@ -745,4 +913,5 @@ body {
   height: 1px;
   background-color: black;
   margin-bottom: 20px; }
+
 /*# sourceMappingURL=main_dress.css.map */

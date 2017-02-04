@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="frameW/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="frameW/jquery-ui.structure.css">
 	<link rel="stylesheet" type="text/css" href="frameW/jquery-ui.theme.css">
+	<script src="frameW/drop-zone.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="jquery-3.1.1.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="frameW/jquery-ui.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="js/libraryData.js" type="text/javascript" charset="utf-8" async defer></script>
@@ -124,7 +125,7 @@
 						</ul>
 					</div>
 					<div id="darkBody" class="darkConteiner">
-						<div id="dark_content_1" class="darkContent">
+						<!-- <div id="dark_content_1" class="darkContent">
 							<div>
 								<iframe class="videoFrame" src="https://www.youtube.com/embed/BMUiFMZr7vk" frameborder="0" allowfullscreen></iframe>
 							</div>
@@ -153,7 +154,7 @@
 							<div>
 								<iframe class="videoFrame" src="https://www.youtube.com/embed/iZLP4qOwY8I" frameborder="0" allowfullscreen></iframe>				
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -164,35 +165,39 @@
 					<div class="boxHead">
 						<ul class="boxMarksConteiner">
 							<li id="box_1" data-tail="box_content_1" class="boxMark">
-								<p class="boxMarksText">set:1</p>
+								<p class="boxMarksText">step:1</p>
 							</li>
 							<li id="box_2" data-tail="box_content_2" class="boxMark">
-								<p class="boxMarksText">set:2</p>
+								<p class="boxMarksText">step:2</p>
 							</li>
 							<li id="box_3" data-tail="box_content_3" class="boxMark">
-								<p class="boxMarksText">set:3</p>
+								<p class="boxMarksText">step:3</p>
 							</li>
-							<li id="box_4" data-tail="box_content_3" class="boxMark">
+							<li id="box_4" data-tail="box_content_4" class="boxMark">
+								<p class="boxMarksText">check</p>
+							</li>
+							<li id="box_5" data-tail="box_content_5" class="boxMark">
 								<p class="boxMarksText">send</p>
-							</li>
-							<li id="box_5" data-tail="box_content_4" class="boxMark">
-								<p class="boxMarksText">form</p>
 							</li>
 						</ul>
 					</div>
 					<div class="boxBody">
+					<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
 						<div id="box_content_1" class="boxContent">
 							<div class="fioFrame">
 								<div class="fioRow">
 									<div id="row_1" class="rowMain">
+										<p class="necessaryMark">*</p>
 										<div class="rowMainTitle"><p class="titleText">name</p></div>
 										<div class="rowMainContent"><input type="text" data-type="name" class="contentText" placeholder="enter your name..." title="Albert"></div>
 									</div>
 									<div id="row_2" class="rowMain">
+										<p class="necessaryMark">*</p>
 										<div class="rowMainTitle"><p class="titleText">family</p></div>
 										<div class="rowMainContent"><input type="text" data-type="family" class="contentText" placeholder="enter your family name..." title="Einstein"></div>
 									</div>
 									<div id="row_3" class="rowMain">
+										<p class="necessaryMark">*</p>
 										<div class="rowMainTitle"><p class="titleText">position</p></div>
 										<div class="rowMainContent"><input type="text" data-type="position" class="contentText" placeholder="enter your position..." title="Theoretical Physicist"></div>
 									</div>
@@ -219,14 +224,17 @@
 										</div>
 									</div>
 									<div id="row_6" class="rowMain">
+										<p class="necessaryMark">*</p>
 										<div class="rowMainTitle"><p class="titleText">city</p></div>
 										<div class="rowMainContent"><input type="text" data-type="city" class="contentText" placeholder="enter your city..." title="Ulm"></div>
 									</div>
 									<div id="row_7" class="rowMain">
+										<p class="necessaryMark">*</p>
 										<div class="rowMainTitle"><p class="titleText">phone</p></div>
 										<div class="rowMainContent"><input type="text" data-type="phone" class="contentText" placeholder="enter your phone number..." title="+55 11 2151-1233"></div>
 									</div>
 									<div id="row_8" class="rowMain">
+										<p class="necessaryMark">*</p>
 										<div class="rowMainTitle"><p class="titleText">email</p></div>
 										<div class="rowMainContent"><input type="text" data-type="email" class="contentText" placeholder="enter your email..." title="albert_einstein@yahoo.com"></div>
 									</div>
@@ -250,13 +258,180 @@
 											<input type="file"></input>
 										</label>
 									</div>
+									<p class="tip_1">files upload temporary not working</p>
+									<p class="tip_2"><span>* </span> necessary to fill up!</p>
 								</div>
 							</div>
 						</div>
-						<div id="box_content_2" class="boxContent">about</div>
-						<div id="box_content_3" class="boxContent">info</div>
+						<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+						<div id="box_content_2" class="boxContent">
+							<div id="about_cont_1" class="aboutContFrame">
+								<p id="education_title" class="aboutTitle">education</p>
+								<div class="tableFrame">
+									<table id="about_table_1" class="totalTable" border="1">
+										<tr id="trTitle_1">
+											<th colspan="" rowspan="" headers="" scope="">data</th>
+											<th colspan="" rowspan="" headers="" scope="">name</th>
+										</tr>
+										<tr id="tr_1">
+											<td><div><input type="date" class="dateTable"><input type="date" class="dateTable"></div></td>
+											<td><input type="text" class="textTable"></td>
+										</tr>
+										<tr id="tr_2">
+											<td><div><input type="date" class="dateTable"><input type="date" class="dateTable"></div></td>
+											<td><input type="text" class="textTable"></td>
+										</tr>
+										<tr id="tr_3">
+											<td><div><input type="date" class="dateTable"><input type="date" class="dateTable"></div></td>
+											<td><input type="text" class="textTable"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<p class="necessaryMark">*</p>
+							<div id="about_cont_2" class="aboutContFrame">
+								<p id="skills_title" class="aboutTitle">skills</p>
+								<textarea class="textSkills" placeholder="enter languages frameworks and all your IT skills..."></textarea>
+							</div>
+							<div id="about_cont_3" class="aboutContFrame">
+								<p id="working_experience_title" class="aboutTitle">working experience</p>
+								<div class="tableFrame">
+									<table id="about_table_2" class="totalTable" border="1">
+										<tr id="trTitle_2">
+											<th colspan="" rowspan="" headers="" scope="">data</th>
+											<th colspan="" rowspan="" headers="" scope="">name</th>
+										</tr>
+										<tr id="tr_4">
+											<td><div><input type="date" class="dateTable"><input type="date" class="dateTable"></div></td>
+											<td><input type="text" class="textTable"></td>
+										</tr>
+										<tr id="tr_5">
+											<td><div><input type="date" class="dateTable"><input type="date" class="dateTable"></div></td>
+											<td><input type="text" class="textTable"></td>
+										</tr>
+										<tr id="tr_6">
+											<td><div><input type="date" class="dateTable"><input type="date" class="dateTable"></div></td>
+											<td><input type="text" class="textTable"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+						<div id="box_content_3" class="boxContent">
+							<p class="necessaryMark">*</p>
+							<div id="language_skill" class="aboutContFrame">
+								<p class="aboutTitle">language skill
+									<div class="infoContent">
+										<div class="language">
+											<span class="textSkills">English: </span>
+											<select name="language-level" class="ll">
+												<option value="none">none</option>
+												<option value="native">native</option>
+												<option value="fluent">fluent</option>
+												<option value="exellent">exellent</option>
+												<option value="good">good</option>
+												<option value="basic">basic</option>
+												<option value="poor">poor</option>
+											</select>
+										</div>
+										<div class="language">
+											<span class="textSkills">Other: </span>
+											<select name="other_1" class="ll">
+												<option value="Chinese">none</option>
+												<option value="Chinese">Chinese</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Javanese">Javanese</option>
+                        <option value="German">German</option>
+                        <option value="Korean">Korean</option>
+                        <option value="French">French</option>
+                        <option value="Turkish">Turkish</option>
+                        <option value="Italian">Italian</option>
+											</select>
+											<span> | </span>
+											<select name="language-level" class="ll">
+												<option value="none">none</option>
+												<option value="native">native</option>
+												<option value="fluent">fluent</option>
+												<option value="exellent">exellent</option>
+												<option value="good">good</option>
+												<option value="basic">basic</option>
+												<option value="poor">poor</option>
+											</select>
+										</div>
+										<div class="language">
+											<span class="textSkills">Other: </span>
+											<select name="other_2" class="ll">
+												<option value="Chinese">none</option>
+												<option value="Chinese">Chinese</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Javanese">Javanese</option>
+                        <option value="German">German</option>
+                        <option value="Korean">Korean</option>
+                        <option value="French">French</option>
+                        <option value="Turkish">Turkish</option>
+                        <option value="Italian">Italian</option>
+                      </select> 
+                      <span> | </span>
+											<select name="language-level" class="ll">
+												<option value="none">none</option>
+												<option value="native">native</option>
+												<option value="fluent">fluent</option>
+												<option value="exellent">exellent</option>
+												<option value="good">good</option>
+												<option value="basic">basic</option>
+												<option value="poor">poor</option>
+											</select>
+										</div>
+									</div>
+								</p>
+							</div>
+							<p class="necessaryMark">*</p>
+							<div id="goal" class="aboutContFrame">
+								<p class="aboutTitle">goal
+									<div class="infoContent">
+										<textarea name="" id="" cols="30" rows="10" class="textSkills infoStyle">text...</textarea>
+									</div>
+								</p>
+							</div>
+							<p class="necessaryMark">*</p>
+							<div id="highlights" class="aboutContFrame">
+								<p class="aboutTitle">highlights
+									<div class="infoContent">
+										<textarea name="" id="" cols="30" rows="10" class="textSkills infoStyle">text...</textarea>
+									</div>
+								</p>
+							</div>
+							<div id="additional_information" class="aboutContFrame">
+								<p class="aboutTitle">additional information
+									<div class="infoContent">
+										<textarea name="" id="" cols="30" rows="10" class="textSkills infoStyle">text...</textarea>
+									</div>
+								</p>
+							</div>
+							<div id="hobby" class="aboutContFrame">
+								<p class="aboutTitle">hobby
+									<div class="infoContent">
+										<textarea name="" id="" cols="30" rows="10" class="textSkills infoStyle">text...</textarea>
+									</div>
+								</p>
+							</div>
+						</div>
+						<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 						<div id="box_content_4" class="boxContent">confirm/send</div>
+						<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 						<div id="box_content_5" class="boxContent">form_statistic</div>
+						<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
 					</div>
 				</div>
 				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -266,9 +441,77 @@
 		</div>
 
 	</div>
-	
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
