@@ -170,15 +170,16 @@
 
 		});
 
-		///////////////////////////////////////////////////////////////////////////////////////////////////////////
-		////     check_events_and_validation   check_events_and_validation   check_events_and_validation      /////
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+		////     fio_validation    fio_validation    fio_validation    fio_validation    fio_validation       /////
+    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 
     var elem = $(".rowMain");
     
     for (var i = 0; i <= elem.length; i++) 
     	$("#row_"+i+" .contentText").on("change", function(){
-    		validationCheck(this);});
+    		validationCheck(this);
+    	});
     
     $(".rbGender[value=male]").on("click", function(){   
     	infoTest.setGender("male");
@@ -198,32 +199,92 @@
     	infoTest.setMaritalStatus("merried");
     });
 
-    $(".textTable").on("change", function(){
-    	if($(this).val().length == 0) 
-    		$(this).css({backgroundColor: "white"});
-    	else{
-    		var par = "#" + $(this).parents("tr").attr("id");
-    		var dateFrom = $(par+" input[type=date]").eq(0).val();
-    		var dateTo = $(par+" input[type=date]").eq(1).val();
+    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+		////   date_vs_content_check   date_vs_content_check   date_vs_content_check   date_vs_content_check  /////
+    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 
-    		if(dateFrom != undefined && dateTo != undefined){
-    			var obj = {
-    				key: dateFrom+"/"+dateTo,
-    				value: $(this).val() 
-    			};
+    $(".textTable").on("change", function(){
+    	var par = "#" + $(this).parents("tr").attr("id");
+    	var dateFrom = $(par+" input[type=date]").eq(0).val();
+    	var dateTo = $(par+" input[type=date]").eq(1).val();
+    	var obj = {};
+
+    	if($(this).val().length == 0) {
+    		$(this).css({backgroundColor: "white"});
+    		obj.key = undefined;
+    		obj.value = undefined;
+    		infoTest.setEducation(par, obj);
+    	}
+    	else{
+    		if(dateFrom != "" && dateTo != ""){
+    			obj.key = dateFrom+"/"+dateTo,
+    			obj.value = $(this).val() 
+    			
     			if(par.slice(-1) < 4)
     				infoTest.setEducation(par, obj);
     			else
     				infoTest.setExperience(par, obj);
+    			$(this).css({backgroundColor: "lightgreen"});
+    		}
+    		else{
+    			$(this).css({backgroundColor: "tomato"});
     		}
     	}
     });
+
+    // var DEl = $("tr[id^=tr_]");
+    // for (var iz = 1; iz <= DEl.length; iz++) {
+    	
+    // 	$("#tr_"+iz+" input[type=date]:first-child()").on("change", function(){
+    // 		var i = iz;
+    // 		if($(this).val() != "" && $("#tr_"+i+" input[type=date]:last-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
+    // 			$("#tr_"+i+" input[type=text]").css({backgroundColor: "lightgreen"});
+    // 		}
+    // 	});
+    // 	$("#tr_"+iz+" input[type=date]:last-child()").on("change", function(){
+    // 		var i = iz;
+    // 		if($(this).val() != "" && $("#tr_"+i+" input[type=date]:first-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
+    // 			$("#tr_"+i+" input[type=text]").css({backgroundColor: "lightgreen"});
+    // 		}
+    // 	});
+    // }
+
+    // $("#tr_1 input[type=date]:first-child()").on("change", function(){
+    // 	if($(this).val() != "" && $("#tr_1 input[type=date]:last-child()").val() != "" && $("#tr_1 input[type=text]").val() != ""){
+    // 		$("#tr_1 input[type=text]").css({backgroundColor: "lightgreen"});
+    // 	}
+    // });
+    // $("#tr_1 input[type=date]:last-child()").on("change", function(){
+    // 	if($(this).val() != "" && $("#tr_1 input[type=date]:first-child()").val() != "" && $("#tr_1 input[type=text]").val() != ""){
+    // 		$("#tr_1 input[type=text]").css({backgroundColor: "lightgreen"});
+    // 	}
+    // });
+
+    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+		////   textarea_event_set   textarea_event_set   textarea_event_set   textarea_event_set   textarea_event_set   /////
+    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 
     $("#about_cont_2 .textSkills").on("change", function(){
     	if($(this).val().length == 0) 
     		$(this).css({backgroundColor: "white"});
     	else
     		infoTest.setSkills($(this).val());
+    });
+
+    $("#goal .infoStyle").on("change", function(){
+    	infoTest.setGoal($(this).val()); 
+    });
+
+    $("#highlights .infoStyle").on("change", function(){
+    	infoTest.setHighlights($(this).val()); 
+    });
+
+    $("#additional_information .infoStyle").on("change", function(){
+    	infoTest.setAdditionalInformation($(this).val()); 
+    });
+
+    $("#hobby .infoStyle").on("change", function(){
+    	infoTest.setHobby($(this).val()); 
     });
 
 		////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
@@ -283,6 +344,30 @@
     	}
     });
 
+    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+		////  step_check_set  step_check_set  step_check_set  step_check_set  step_check_set  step_check_set       ///
+    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+
+    $(".btnShow").on("click", function(){
+    	console.clear();
+    	// console.log(infoTest.showYourSelf());
+
+    	var obj = infoTest.getEducation();
+    	
+    	for (var i = 1; i <= 3; i++) {
+    		if(obj["#tr_" + i].key !== undefined){
+    			console.log(obj["#tr_" + i].key);
+    			console.log(obj["#tr_" + i].value);	
+    		}
+    	}
+    	
+
+    	
+    });
+
+    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+		////  function for validation  function for validation  function for validation  function for validation   ///
+    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
 
     function validationCheck(obj){
     	if($(obj).val().length == 0)
@@ -349,14 +434,18 @@
 
 })();
 
+function cc(obj){
+	console.clear();
+	console.log(obj);
+}
+
 function hrManager(){
 	var patternName = /^[a-zA-Z]{2,20}$/;
 	var patternFamily = /^[a-zA-Z\-]{2,40}$/;
 	var patternPosition = /^[a-zA-Z\-().#]{2,40}$/;
 	var patternPhone = /^[0-9\-+()]{6,20}$/;
 	var patternEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	var patternUrl = /^(ftp|http|https):\/\/[^ "]+\.[a-z]{1,4}$/;
-	
+	var patternUrl = /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,4})/;
 
 	var _name;
 	var _family;
@@ -440,7 +529,7 @@ function hrManager(){
 		if(patternUrl.test(data)) _web = data;
 		return patternUrl.test(data);
 	}
-	this.getWeb = function(){return _data;}
+	this.getWeb = function(){return _web;}
 
 	this.setSkills = function(data){_skills = data;}
 	this.getSkills = function(){return _skills;}
@@ -455,7 +544,7 @@ function hrManager(){
 	this.getLanguage = function(){return _language;}
 
 	this.setGoal = function(data){_goal = data;}
-	this.getData = function(){return _goal;}
+	this.getGoal = function(){return _goal;}
 
 	this.setHighlights = function(data){_highlights = data;}
 	this.getHighlights = function(){return _highlights;}
@@ -468,6 +557,53 @@ function hrManager(){
 
 	/////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
 
+	this.showYourSelf = function(){
+		var message = "name  | " + this.getName() + "\r\n";
+		message += "family   | " + this.getFamily() + "\r\n";
+		message += "position | " + this.getPosition() + "\r\n";
+		message += "gender   | " + this.getGender() + "\r\n";
+		message += "marital  | " + this.getMaritalStatus() + "\r\n";
+		message += "city     | " + this.getCity() + "\r\n";
+		message += "phone    | " + this.getPhone() + "\r\n";
+		message += "email    | " + this.getEmail() + "\r\n";
+		message += "skayp    | " + this.getSkayp() + "\r\n";
+		message += "git      | " + this.getGit() + "\r\n";
+		message += "web      | " + this.getWeb() + "\r\n"; 
+
+		// var obj = this.getEducation();
+		// message += "  education |" + obj["#tr_1"].value + "\r\n";
+		// message += "  education |" + obj["#tr_2"] + "\r\n";
+		// message += "  education |" + obj["#tr_3"] + "\r\n";
+
+		// message += "education |" + obj["#tr_1"].key + "|" + obj["#tr_1"].value;
+		// message += "education |" + obj["#tr_2"].key + "|" + obj["#tr_2"].value;
+		// message += "education |" + obj["#tr_3"].key + "|" + obj["#tr_3"].value;
+		// // for (var i = 0; i < obj.length; i++) {
+		// //   	message += "education| " + obj[i].key + "/" + obj[i].value + "\r\n";
+		// //   }  
+		// message += "skills   | " + this.getSkills() + "\r\n";
+		// obj = this.getExperience();
+		// message += "experience | " + obj["#tr_4"].key + "|" + obj["#tr_4"].value;
+		// message += "experience | " + obj["#tr_5"].key + "|" + obj["#tr_5"].value;
+		// message += "experience | " + obj["#tr_6"].key + "|" + obj["#tr_6"].value;
+		// // for (var i = 0; i < obj.length; i++) {
+		// // 	message += "experience| " + obj[i].key + "/" + obj[i].value + "\r\n";
+		// // }
+		// obj = this.getLanguage();
+		// message += "language | " + obj[0].key + "" + obj[0].value;
+		// message += "language | " + obj[1].key + "" + obj[1].value;
+		// message += "language | " + obj[2].key + "" + obj[2].value;
+		// // for (var i = 0; i < obj.length; i++) {
+		// //    	message += "language  | " + obj.key + "/" + obj.value + "\r\n";
+		// //    }   
+
+		message += "goal       | " + this.getGoal() + "\r\n";
+		message += "highlights | " + this.getHighlights() + "\r\n";
+		message += "additional | " + this.getAdditionalInformation() + "\r\n";
+		message += "hobby      | " + this.getHobby() + "\r\n";   
+
+		return message;
+	}
 
 }
 
