@@ -232,33 +232,24 @@
     	}
     });
 
-    // var DEl = $("tr[id^=tr_]");
-    // for (var iz = 1; iz <= DEl.length; iz++) {
+    var DEl = $("tr[id^=tr_]");
+    for (var iz = 1; iz <= DEl.length; iz++) {
     	
-    // 	$("#tr_"+iz+" input[type=date]:first-child()").on("change", function(){
-    // 		var i = iz;
-    // 		if($(this).val() != "" && $("#tr_"+i+" input[type=date]:last-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
-    // 			$("#tr_"+i+" input[type=text]").css({backgroundColor: "lightgreen"});
-    // 		}
-    // 	});
-    // 	$("#tr_"+iz+" input[type=date]:last-child()").on("change", function(){
-    // 		var i = iz;
-    // 		if($(this).val() != "" && $("#tr_"+i+" input[type=date]:first-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
-    // 			$("#tr_"+i+" input[type=text]").css({backgroundColor: "lightgreen"});
-    // 		}
-    // 	});
-    // }
+    	(function(){
+    		var i = iz;
 
-    // $("#tr_1 input[type=date]:first-child()").on("change", function(){
-    // 	if($(this).val() != "" && $("#tr_1 input[type=date]:last-child()").val() != "" && $("#tr_1 input[type=text]").val() != ""){
-    // 		$("#tr_1 input[type=text]").css({backgroundColor: "lightgreen"});
-    // 	}
-    // });
-    // $("#tr_1 input[type=date]:last-child()").on("change", function(){
-    // 	if($(this).val() != "" && $("#tr_1 input[type=date]:first-child()").val() != "" && $("#tr_1 input[type=text]").val() != ""){
-    // 		$("#tr_1 input[type=text]").css({backgroundColor: "lightgreen"});
-    // 	}
-    // });
+    	$("#tr_"+i+" input[type=date]:first-child()").on("change", function(){
+    		if($(this).val() != "" && $("#tr_"+i+" input[type=date]:last-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
+    			$("#tr_"+i+" input[type=text]").css({backgroundColor: "lightgreen"});
+    		}
+    	});
+    	$("#tr_"+i+" input[type=date]:last-child()").on("change", function(){
+    		if($(this).val() != "" && $("#tr_"+i+" input[type=date]:first-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
+    			$("#tr_"+i+" input[type=text]").css({backgroundColor: "lightgreen"});
+    		}
+    	});
+    	})();
+    }
 
     ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 		////   textarea_event_set   textarea_event_set   textarea_event_set   textarea_event_set   textarea_event_set   /////
