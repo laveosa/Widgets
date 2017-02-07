@@ -816,7 +816,9 @@ $radius: 30px;
 	@include font(Dehuti, 32px);
 }
 
-
+.boxContent .btnShow{
+	display: none;
+}
 
 
 
