@@ -626,6 +626,7 @@ li.active {
   border-radius: 3px;
   box-shadow: 3px 3px 8px grey;
   width: 300px;
+  margin-bottom: 8px;
   height: auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -885,6 +886,7 @@ li.active {
   float: right; }
 
 .btnResume {
+  cursor: pointer;
   -webkit-transition: all 300ms ease-in-out;
           transition: all 300ms ease-in-out;
   font-family: Alegreya Sans;
@@ -908,6 +910,11 @@ li.active {
   .btnResume:hover {
     background-color: #fff;
     color: blue; }
+  .btnResume:disabled {
+    background-color: #3B3B43;
+    border-color: #3B3B43;
+    color: white;
+    opacity: 0.5; }
 
 .resLine {
   width: 90%;
@@ -955,14 +962,15 @@ li.active {
   width: 100%;
   overflow: hidden; }
 
-.resumeTxt {
+.resumeTxt, .title {
   margin: 0px;
   padding: 0px; }
-  .resumeTxt.Title {
-    font-size: 45px;
-    font-weight: bold; }
 
-.Title + .blockContent {
+.title {
+  font-size: 45px;
+  font-weight: bold; }
+
+.title + .blockContent {
   min-height: 20px;
   width: 98%;
   margin-left: 10px;
@@ -996,11 +1004,11 @@ body {
   border: 1px solid black;
   background-color: black;
   color: white;
-  margin: 20px;
   min-height: 20px;
   min-widht: 20px;
   width: 80%;
-  margin: auto; }
+  margin: auto;
+  margin-bottom: 30px; }
   .winFrame .winText {
     font-family: Dancing Script;
     font-size: 26px;
@@ -1019,6 +1027,7 @@ body {
   font-weight: normal;
   text-align: start;
   overflow: hidden;
+  min-height: 40px;
   height: auto; }
 
 .line {

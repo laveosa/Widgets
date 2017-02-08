@@ -572,6 +572,7 @@ $radius: 30px;
 	border-radius: 3px;
 	box-shadow: 3px 3px 8px grey;
 	width: 300px;
+	margin-bottom: 8px;
 	height: auto;
 	display: flex;
 	flex-direction: row;
@@ -853,6 +854,7 @@ $radius: 30px;
 }
 
 .btnResume{
+	cursor: pointer;
 	transition: all 300ms ease-in-out;
 	@include font(Alegreya Sans, 26px);
 	text-align: center;
@@ -868,6 +870,12 @@ $radius: 30px;
 	&:hover{
 		background-color: #fff;
 		color: blue;
+	}
+	&:disabled{
+		background-color: #3B3B43;
+		border-color: #3B3B43;
+		color: white;
+		opacity: 0.5;
 	}
 }
 
@@ -928,13 +936,15 @@ $radius: 30px;
 .resumeTxt{
 	margin: 0px;
 	padding: 0px;
-	&.Title{
-		font-size: 45px;
-		font-weight: bold;
-	}
 }
 
-.Title+.blockContent{
+.title{
+	@extend .resumeTxt;
+	font-size: 45px;
+	font-weight: bold;
+}
+
+.title+.blockContent{
 	min-height: 20px;
 	width: 98%;
 	margin-left: 10px;

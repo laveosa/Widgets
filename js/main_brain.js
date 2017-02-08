@@ -161,7 +161,7 @@
             });
 
         $(".fileUpload input[type=file]").on("change", function(){
-            
+
             ///////////////////////////////////////////////////////////////////////////////////////
             //////
             //////     in progress   :)   in progress  :)   in progress  :)   in progress  
@@ -172,337 +172,405 @@
 
         ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
         ////     fio_validation    fio_validation    fio_validation    fio_validation    fio_validation       /////
-    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 
-    var elem = $(".rowMain");
-    
-    for (var i = 0; i <= elem.length; i++) 
-        $("#row_"+i+" .contentText").on("change", function(){
-            validationCheck(this);
+        var elem = $(".rowMain");
+
+        for (var i = 0; i <= elem.length; i++) 
+            $("#row_"+i+" .contentText").on("change", function(){
+                validationCheck(this);
+            });
+
+        $(".rbGender[value=male]").on("click", function(){   
+            infoTest.setGender("male");
+            $(".imgFile").attr('src', 'image/male_photo.jpg');
         });
+
+        $(".rbGender[value=fimale]").on("click", function(){   
+            infoTest.setGender("fimale");
+            $(".imgFile").attr('src', 'image/fimale_photo.jpg');
+        });
+
+        $(".rbMStatus[value=single]").on("click", function(){
+            infoTest.setMaritalStatus("single");
+        });
+
+        $(".rbMStatus[value=married]").on("click", function(){
+            infoTest.setMaritalStatus("merried");
+        });
+
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+        ////   date_vs_content_check   date_vs_content_check   date_vs_content_check   date_vs_content_check  /////
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+
+        dateSetDefault();
+
+        $(".textTable").on("change", function(){
+            var par = "#" + $(this).parents("tr").attr("id");
     
-    $(".rbGender[value=male]").on("click", function(){   
-        infoTest.setGender("male");
-        $(".imgFile").attr('src', 'image/male_photo.jpg');
-    });
+            if($(this).val().length == 0) {
+                $(this).css({backgroundColor: "white"});
+                var obj = {
+                    key: "",
+                    value: ""
+                };
+                infoTest.setEducation(par, obj);
+                infoTest.setExperience(par, obj);
+            }
+            else{
+              setDate(this);
+            }
+        });
 
-    $(".rbGender[value=fimale]").on("click", function(){   
-        infoTest.setGender("fimale");
-        $(".imgFile").attr('src', 'image/fimale_photo.jpg');
-    });
+        var DEl = $("tr[id^=tr_]");
+        for (var iz = 1; iz <= DEl.length; iz++) {
+            (function(){
+                var i = iz;
+                $("#tr_"+i+" input[type=date]:first-child()").on("change", function(){
+                    if($(this).val() != "" && $("#tr_"+i+" input[type=date]:last-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
+                        var dot = $("#tr_"+i+" input[type=text]");
+                        setDate(dot);
+                    }
+                });
+                $("#tr_"+i+" input[type=date]:last-child()").on("change", function(){
+                    if($(this).val() != "" && $("#tr_"+i+" input[type=date]:first-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
+                        var dot = $("#tr_"+i+" input[type=text]");
+                        setDate(dot);
+                    }
+                });
+            })();
+        }
 
-    $(".rbMStatus[value=single]").on("click", function(){
-        infoTest.setMaritalStatus("single");
-    });
+        function dateSetDefault(){
+            $("#about_table_1 .textTable").each(function(){
+                var par = "#" + $(this).parents("tr").attr("id");
+                $(this).css({backgroundColor: "white"});
+                var obj = {
+                    key: undefined,
+                    value: undefined
+                };
+                infoTest.setEducation(par, obj);
+            });
+    
+            $("#about_table_2 .textTable").each(function(){
+                var par = "#" + $(this).parents("tr").attr("id");
+                $(this).css({backgroundColor: "white"});
+                var obj = {
+                    key: undefined,
+                    value: undefined
+                };
+                infoTest.setExperience(par, obj);
+            });
+        }
 
-    $(".rbMStatus[value=married]").on("click", function(){
-        infoTest.setMaritalStatus("merried");
-    });
-
-    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
-    ////   date_vs_content_check   date_vs_content_check   date_vs_content_check   date_vs_content_check  /////
-    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
-
-    dateSetDefault();
-
-    $(".textTable").on("change", function(){
-        var par = "#" + $(this).parents("tr").attr("id");
-
-        if($(this).val().length == 0) {
-            $(this).css({backgroundColor: "white"});
+        function setDate(elem){
+            var par = "#" + $(elem).parents("tr").attr("id");
+            var dateFrom = $(par+" input[type=date]").eq(0).val();
+            var dateTo = $(par+" input[type=date]").eq(1).val();
             var obj = {
                 key: "",
                 value: ""
             };
-            infoTest.setEducation(par, obj);
-            infoTest.setExperience(par, obj);
+    
+            if(dateFrom != "" && dateTo != ""){
+                obj.key = dateFrom+"/"+dateTo;
+                obj.value = $(elem).val();
+
+                if(par.slice(-1) < 4)
+                    infoTest.setEducation(par, obj);
+                else
+                    infoTest.setExperience(par, obj);
+    
+                $(elem).css({backgroundColor: "lightgreen"});
+            }
+            else{
+                $(elem).css({backgroundColor: "tomato"});
+            }
         }
-        else{
-          setDate(this);
-      }
-  });
 
-    var DEl = $("tr[id^=tr_]");
-    for (var iz = 1; iz <= DEl.length; iz++) {
-        (function(){
-            var i = iz;
-            $("#tr_"+i+" input[type=date]:first-child()").on("change", function(){
-                if($(this).val() != "" && $("#tr_"+i+" input[type=date]:last-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
-                    var dot = $("#tr_"+i+" input[type=text]");
-                    setDate(dot);
-                }
-            });
-            $("#tr_"+i+" input[type=date]:last-child()").on("change", function(){
-                if($(this).val() != "" && $("#tr_"+i+" input[type=date]:first-child()").val() != "" && $("#tr_"+i+" input[type=text]").val() != ""){
-                    var dot = $("#tr_"+i+" input[type=text]");
-                    setDate(dot);
-                }
-            });
-        })();
-    }
-
-    function dateSetDefault(){
-        $("#about_table_1 .textTable").each(function(){
-            var par = "#" + $(this).parents("tr").attr("id");
-            $(this).css({backgroundColor: "white"});
-            var obj = {
-                key: undefined,
-                value: undefined
-            };
-            infoTest.setEducation(par, obj);
-        });
-
-        $("#about_table_2 .textTable").each(function(){
-            var par = "#" + $(this).parents("tr").attr("id");
-            $(this).css({backgroundColor: "white"});
-            var obj = {
-                key: undefined,
-                value: undefined
-            };
-            infoTest.setExperience(par, obj);
-        });
-    }
-
-    function setDate(elem){
-        var par = "#" + $(elem).parents("tr").attr("id");
-        var dateFrom = $(par+" input[type=date]").eq(0).val();
-        var dateTo = $(par+" input[type=date]").eq(1).val();
-        var obj = {
-            key: "",
-            value: ""
-        };
-
-        if(dateFrom != "" && dateTo != ""){
-            obj.key = dateFrom+"/"+dateTo;
-            obj.value = $(elem).val();
-
-            if(par.slice(-1) < 4)
-                infoTest.setEducation(par, obj);
-            else
-                infoTest.setExperience(par, obj);
-
-            $(elem).css({backgroundColor: "lightgreen"});
-        }
-        else{
-            $(elem).css({backgroundColor: "tomato"});
-        }
-    }
-
-    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
         ////   textarea_event_set   textarea_event_set   textarea_event_set   textarea_event_set   textarea_event_set   /////
-    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 
-    $("#about_cont_2 .textSkills").on("change", function(){
-        if($(this).val().length == 0) 
-            $(this).css({backgroundColor: "white"});
-        else
-            infoTest.setSkills($(this).val());
-    });
+        $("#about_cont_2 .textSkills").on("change", function(){
+            if($(this).val().length == 0) 
+                $(this).css({backgroundColor: "white"});
+            else
+                infoTest.setSkills($(this).val());
+        });
+    
+        $("#goal .infoStyle").on("change", function(){
+            infoTest.setGoal($(this).val()); 
+        });
 
-    $("#goal .infoStyle").on("change", function(){
-        infoTest.setGoal($(this).val()); 
-    });
+        $("#highlights .infoStyle").on("change", function(){
+            infoTest.setHighlights($(this).val()); 
+        });
 
-    $("#highlights .infoStyle").on("change", function(){
-        infoTest.setHighlights($(this).val()); 
-    });
+        $("#additional_information .infoStyle").on("change", function(){
+            infoTest.setAdditionalInformation($(this).val()); 
+        });
 
-    $("#additional_information .infoStyle").on("change", function(){
-        infoTest.setAdditionalInformation($(this).val()); 
-    });
-
-    $("#hobby .infoStyle").on("change", function(){
-        infoTest.setHobby($(this).val()); 
-    });
+        $("#hobby .infoStyle").on("change", function(){
+            infoTest.setHobby($(this).val()); 
+        });
 
         ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
         ////  languages_set  languages_set  languages_set  languages_set  languages_set  languages_set  languages_set   ///
-    ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
 
-    languageSetDefault();
+        languageSetDefault();
 
-    $("#english select").on("change", function(){
-        var obj = {
-            key: "English",
-            value: $(this).val() 
-        };
-        infoTest.setLanguage(0, obj);
-    });
-    $("#english select").change();
-
-    $("#other_1 select[name=other_1]").on("change", function(){
-        var obj={};
-        if($(this).val() == "none"){
-            obj.key = "none";
-            obj.value = "none";
-        }
-        else{
-            obj.key = $(this).val();
-            obj.value = $("#other_1 select[name=language-level]").val();
-        }
-        infoTest.setLanguage(1, obj);
-    });
-    $("#other_1 select[name=language-level]").on("change", function(){
-        if($("#other_1 select[name=other_1]").val() != "none"){
+        $("#english select").on("change", function(){
             var obj = {
-                key: $("#other_1 select[name=other_1]").val(),
-                value: $(this).val()
+                key: "English",
+                value: $(this).val() 
             };
-            infoTest.setLanguage(1, obj);   
-        }
-    });
+            infoTest.setLanguage(0, obj);
+        });
+        $("#english select").change();
 
-    $("#other_2 select[name=other_2]").on("change", function(){
-        var obj={};
-        if($(this).val() == "none"){
-            obj.key = "none";
-            obj.value = "none";
-        }
-        else{
-            obj.key = $(this).val();
-            obj.value = $("#other_2 select[name=language-level]").val();
-        }
-        infoTest.setLanguage(2, obj);
-    });
-    $("#other_2 select[name=language-level]").on("change", function(){
-        if($("#other_2 select[name=other_2]").val() != "none"){
-            var obj = {
-                key: $("#other_2 select[name=other_2]").val(),
-                value: $(this).val()
-            };
-            infoTest.setLanguage(2, obj);   
-        }
-    });
+        $("#other_1 select[name=other_1]").on("change", function(){
+            var obj={};
+            if($(this).val() == "none"){
+                obj.key = "none";
+                obj.value = "none";
+            }
+            else{
+                obj.key = $(this).val();
+                obj.value = $("#other_1 select[name=language-level]").val();
+            }
+            infoTest.setLanguage(1, obj);
+        });
+        $("#other_1 select[name=language-level]").on("change", function(){
+            if($("#other_1 select[name=other_1]").val() != "none"){
+                var obj = {
+                    key: $("#other_1 select[name=other_1]").val(),
+                    value: $(this).val()
+                };
+                infoTest.setLanguage(1, obj);   
+            }
+        });
 
-    function languageSetDefault(){
-        for (var i = 0; i < 3; i++) {
-            var obj = {
-                key: undefined,
-                value: undefined
-            };
-            infoTest.setLanguage(i, obj);
+        $("#other_2 select[name=other_2]").on("change", function(){
+            var obj={};
+            if($(this).val() == "none"){
+                obj.key = "none";
+                obj.value = "none";
+            }
+            else{
+                obj.key = $(this).val();
+                obj.value = $("#other_2 select[name=language-level]").val();
+            }
+            infoTest.setLanguage(2, obj);
+        });
+        $("#other_2 select[name=language-level]").on("change", function(){
+            if($("#other_2 select[name=other_2]").val() != "none"){
+                var obj = {
+                    key: $("#other_2 select[name=other_2]").val(),
+                    value: $(this).val()
+                };
+                infoTest.setLanguage(2, obj);   
+            }
+        });
+
+        function languageSetDefault(){
+            for (var i = 0; i < 3; i++) {
+                var obj = {
+                    key: undefined,
+                    value: undefined
+                };
+                infoTest.setLanguage(i, obj);
+            }
         }
-    }
 
-    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
-        ////  step_check_set  step_check_set  step_check_set  step_check_set  step_check_set  step_check_set       ///
-    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+        ////  show_object_console  show_object_console  show_object_console  show_object_console  show_object_console   ///
+        ////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
 
-    console.clear();
-    console.log("press 'Alt'+z to show resume object!");
-
-    $(".btnShow").on("click", function(){
-        console.clear();
+        // console.clear();
         console.log("press 'Alt'+z to show resume object!");
-        console.log(infoTest.showYourSelf());
-        if(infoTest.youReady())
-            console.log('object ready!');
-        else
-            console.log('NOT ready!');
 
-        // infoTest.show();
-    });                      
+        $(".btnShow").on("click", function(){
+            console.clear();
+            console.log("press 'Alt'+z to show resume object!");
+            console.log(infoTest.showYourSelf());
+            if(infoTest.youReady())
+                console.log('object ready!');
+            else
+                console.log('NOT ready!');
+    
+            // infoTest.show();
+        });                      
 
-    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
-        ////  function for validation  function for validation  function for validation  function for validation   ///
-    ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+        ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+        ////  check_FIO_validation  check_FIO_validation  check_FIO_validation  check_FIO_validation  check_FIO_validation   ///
+        ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
 
-    function validationCheck(obj){
-        var D_type =  $(obj).attr("data-type");
-        switch (D_type) {
-            case "name":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setName("");
+        function validationCheck(obj){
+            var D_type =  $(obj).attr("data-type");
+            switch (D_type) {
+                case "name":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setName("");
+                }
+                else if(infoTest.setName($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;
+                case "family":   
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setFamily("");
+                }
+                else if(infoTest.setFamily($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;
+                case "position":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setPosition("");
+                }
+                else if(infoTest.setPosition($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;  
+                case "phone":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setPhone("");
+                }
+                else if(infoTest.setPhone($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;
+                case "city":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setCity("");
+                }
+                else 
+                    infoTest.setCity($(obj).val()); 
+                break;
+                case "email":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setEmail("");
+                }
+                else if(infoTest.setEmail($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;
+                case "skayp":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setSkayp("");
+                }
+                else if(infoTest.setSkayp($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;
+                case "git":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setGit("");
+                }
+                else if(infoTest.setGit($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;
+                case "web":
+                if($(obj).val().length == 0){   
+                    $(obj).css({backgroundColor: 'white'});
+                    infoTest.setWeb("");
+                }
+                else if(infoTest.setWeb($(obj).val()))
+                    $(obj).css({backgroundColor: 'lightgreen'});
+                else
+                    $(obj).css({backgroundColor: 'tomato'});
+                break;
             }
-            else if(infoTest.setName($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;
-            case "family":   
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setFamily("");
-            }
-            else if(infoTest.setFamily($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;
-            case "position":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setPosition("");
-            }
-            else if(infoTest.setPosition($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;  
-            case "phone":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setPhone("");
-            }
-            else if(infoTest.setPhone($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;
-            case "city":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setCity("");
-            }
-            else 
-                infoTest.setCity($(obj).val()); 
-            break;
-            case "email":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setEmail("");
-            }
-            else if(infoTest.setEmail($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;
-            case "skayp":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setSkayp("");
-            }
-            else if(infoTest.setSkayp($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;
-            case "git":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setGit("");
-            }
-            else if(infoTest.setGit($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;
-            case "web":
-            if($(obj).val().length == 0){   
-                $(obj).css({backgroundColor: 'white'});
-                infoTest.setWeb("");
-            }
-            else if(infoTest.setWeb($(obj).val()))
-                $(obj).css({backgroundColor: 'lightgreen'});
-            else
-                $(obj).css({backgroundColor: 'tomato'});
-            break;
         }
-    }
 
-});
+        ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
+        ////  resume_button_set  resume_button_set  resume_button_set  resume_button_set  resume_button_set  resume_button_set   ///
+        ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
 
+        $(".btnResume[value=show]").on("click", function(){
+           var elem = document.querySelectorAll(".resumeTxt[data-code]");
+           var i = 0;
+
+           for(e in infoTest){
+                if(e.substr(0, 3) == "get"){
+                    if(infoTest[e]() != undefined){
+                        var text = elem[i].innerHTML.split(": ");
+                        elem[i].innerHTML = text[0] + " : ";
+                        elem[i].innerHTML += infoTest[e]();    
+                    }
+                    else if(infoTest[e]() == undefined){
+                        var text = elem[i].innerHTML.split(": ");
+                        elem[i].innerHTML = text[0] + " : ";
+                        elem[i].innerHTML += "none";
+                    }
+                    i++;
+                }
+           }
+
+           elem = document.querySelector(".resumeTxt[data-code=education]");
+           elem.innerHTML = "";
+           var arr = infoTest.getEducation();
+
+           for (var i = 1; i <= 3; i++) {
+               if(arr["#tr_"+i].key != undefined)
+                elem.innerHTML += arr["#tr_"+i].key + " | " + arr["#tr_"+i].value + "<br/>";     
+           }
+
+           // if(arr["#tr_1"].key != undefined)
+           //      elem.innerHTML = arr["#tr_1"].key + " | " + arr["#tr_1"].value + "<br/>";     
+
+
+           elem = document.querySelector(".resumeTxt[data-code=language]");
+           elem.innerHTML = "";
+           var arr = infoTest.getLanguage();
+
+           for (var i = 0; i < arr.length; i++) {
+               if(arr[i].key != undefined || arr[i].key != "")
+                elem.innerHTML += arr[i].key + "-" + arr[i].value + "  |  ";
+           }
+
+        });
+
+        $(".btnResume[value=confirm]").on("click", function(){
+            
+        });
+
+        $(".btnResume[value=save]").on("click", function(){
+            
+        });
+
+        $(".btnResume[value=load]").on("click", function(){
+            
+        });
+
+        $(".btnResume[value=delete]").on("click", function(){
+            
+        });
+
+        $(".btnResume[value=delete-all]").on("click", function(){
+            
+        });
+
+    /////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>////////                
+    });
 })();
 
 
@@ -634,38 +702,40 @@ function hrManager(){
 
     /// first option
     this.showYourSelf = function(){
-      var message = "name         | " + this.getName() + "\r\n";
-      message += "family       | " + this.getFamily() + "\r\n";
-      message += "position     | " + this.getPosition() + "\r\n";
-      message += "gender       | " + this.getGender() + "\r\n";
-      message += "marital      | " + this.getMaritalStatus() + "\r\n";
-      message += "city         | " + this.getCity() + "\r\n";
-      message += "phone        | " + this.getPhone() + "\r\n";
-      message += "email        | " + this.getEmail() + "\r\n";
-      message += "skayp        | " + this.getSkayp() + "\r\n";
-      message += "git          | " + this.getGit() + "\r\n";
-      message += "web          | " + this.getWeb() + "\r\n"; 
+        var message = "name         | " + this.getName() + "\r\n";
+        message += "family       | " + this.getFamily() + "\r\n";
+        message += "position     | " + this.getPosition() + "\r\n";
+        message += "gender       | " + this.getGender() + "\r\n";
+        message += "marital      | " + this.getMaritalStatus() + "\r\n";
+        message += "city         | " + this.getCity() + "\r\n";
+        message += "phone        | " + this.getPhone() + "\r\n";
+        message += "email        | " + this.getEmail() + "\r\n";
+        message += "skayp        | " + this.getSkayp() + "\r\n";
+        message += "git          | " + this.getGit() + "\r\n";
+        message += "web          | " + this.getWeb() + "\r\n"; 
 
-      var obj = this.getEducation();
-      for (var i = 1; i <= 3; i++) 
-        message += " education   | " + obj["#tr_"+i].key + " " + obj["#tr_"+i].value + "\r\n";
-    obj = this.getExperience();
-    for (var i = 4; i <= 6; i++) 
-        message += "  experience | " + obj["#tr_"+i].key + " " + obj["#tr_"+i].value + "\r\n";
+        var obj = this.getEducation();
+        for (var i = 1; i <= 3; i++){ 
+          message += " education   | " + obj["#tr_"+i].key + " " + obj["#tr_"+i].value + "\r\n";
+        }
+    
+        obj = this.getExperience();
+        for (var i = 4; i <= 6; i++){
+            message += "  experience | " + obj["#tr_"+i].key + " " + obj["#tr_"+i].value + "\r\n";
+        }
+        obj = this.getLanguage();
+        for (var i = 0; i < 3; i++) {
+            message += "   language  | " + obj[i].key + " " + obj[i].value + "\r\n";
+        }
 
+        message += "skills       | " + this.getSkills() + "\r\n";
+        message += "goal         | " + this.getGoal() + "\r\n";
+        message += "highlights   | " + this.getHighlights() + "\r\n";
+        message += "additional   | " + this.getAdditionalInformation() + "\r\n";
+        message += "hobby        | " + this.getHobby() + "\r\n";   
 
-    obj = this.getLanguage();
-    for (var i = 0; i < 3; i++) 
-        message += "   language  | " + obj[i].key + " " + obj[i].value + "\r\n";
-
-    message += "skills       | " + this.getSkills() + "\r\n";
-    message += "goal         | " + this.getGoal() + "\r\n";
-    message += "highlights   | " + this.getHighlights() + "\r\n";
-    message += "additional   | " + this.getAdditionalInformation() + "\r\n";
-    message += "hobby        | " + this.getHobby() + "\r\n";   
-
-    return message;
-}
+        return message;
+    }
 
     /// second option
     this.show = function(){
@@ -700,15 +770,16 @@ function hrManager(){
                 objStatus.push(this[elem]());
         }
 
-        for (var i = 0; i < objStatus.length; i++)
+        for (var i = 0; i < objStatus.length; i++){
             if(objStatus[i] == undefined || objStatus[i] == "")
                 return false;
-        
+        }    
+
         return true;
     }
+};
 
 
-}
 
 
 
@@ -825,80 +896,6 @@ function hrManager(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    // function validationCheck(obj){
-    //     if($(obj).val().length == 0){    
-    //         $(obj).css({backgroundColor: 'white'});
-    //     }   
-    //     else{
-    //         var D_type =  $(obj).attr("data-type");
-    //         switch (D_type) {
-    //             case "name":
-    //             if(infoTest.setName($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});   
-    //             break;
-    //             case "family":   
-    //             if(infoTest.setFamily($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});
-    //             break;
-    //             case "position":
-    //             if(infoTest.setPosition($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});
-    //             break;  
-    //             case "phone":
-    //             if(infoTest.setPhone($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});
-    //             break;
-    //             case "city":
-    //             infoTest.setCity($(obj).val()); 
-    //             break;
-    //             case "email":
-    //             if(infoTest.setEmail($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});
-    //             break;
-    //             case "skayp":
-    //             if(infoTest.setSkayp($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});
-    //             break;
-    //             case "git":
-    //             if(infoTest.setGit($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});
-    //             break;
-    //             case "web":
-    //             if(infoTest.setWeb($(obj).val()))
-    //                 $(obj).css({backgroundColor: 'lightgreen'});
-    //             else
-    //                 $(obj).css({backgroundColor: 'tomato'});
-    //             break;
-    //         }
-    //     }
-    // }
-
-    // ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????
 
 
 

@@ -30,11 +30,11 @@ body{
 	@include br();
 	background-color: black;
 	color: white;
-	margin: 20px;
 	min-height: 20px;
 	min-widht: 20px;
 	width: 80%;
 	margin: auto;
+	margin-bottom: 30px;
 	& .winText{
 		@include font(Dancing Script, 26px, normal, bold, center);
 		
@@ -48,6 +48,7 @@ body{
 	margin: 2px;
 	@include font(Alegreya Sans, 16px);
 	overflow: hidden;
+	min-height: 40px;
 	height: auto;
 }
 

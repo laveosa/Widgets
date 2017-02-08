@@ -47,10 +47,10 @@
 						</div>
 					</div>
 				</div>
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<p class="blockTip">point mouse on tab content!</p>
 				<hr class="line">
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<div class="tabStiker">
 					<div id="tab_head" class="tabConteiner">
 						<div id="tail_1" data-tail="page_1" class="bookMark"><div class="bookMarkLogo">#01</div></div>
@@ -97,10 +97,10 @@
 						</div>
 					</div>
 				</div>
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<p class="blockTip">information will be saved in local storage!</p>
 				<hr class="line">
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<div class="dark">
 					<div id="darkHead" class="darkConteiner">
 						<ul class="tabMarkFrame">
@@ -157,10 +157,10 @@
 						</div> -->
 					</div>
 				</div>
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<p class="blockTip">play video!</p>
 				<hr class="line">
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<div class="storageBox">
 					<div class="boxHead">
 						<ul class="boxMarksConteiner">
@@ -431,40 +431,40 @@
 											<div class="resumePhotoPlace">photo</div>
 										</div>
 										<div class="blockContentFIO">
-											<p id="block_1Row" data-code="name" class="resumeTxt">First Name : </p>
-											<p id="block_1Row" data-code="family" class="resumeTxt">Last Name : </p>
-											<p id="block_1Row" data-code="position" class="resumeTxt">Position : </p>
-											<p id="block_1Row" data-code="gender" class="resumeTxt">Gender : </p>
-											<p id="block_1Row" data-code="merried" class="resumeTxt">Marital status : </p>
-											<p id="block_1Row" data-code="city" class="resumeTxt">City : </p>
-											<p id="block_1Row" data-code="phone" class="resumeTxt">Phone : </p>
-											<p id="block_1Row" data-code="email" class="resumeTxt">Email : </p>
-											<p id="block_1Row" data-code="skayp" class="resumeTxt">Skayp : </p>
-											<p id="block_1Row" data-code="git" class="resumeTxt">Git : </p>
-											<p id="block_1Row" data-code="web" class="resumeTxt">Web : </p>
+											<p data-code="name" class="resumeTxt">First Name : </p>
+											<p data-code="family" class="resumeTxt">Last Name : </p>
+											<p data-code="position" class="resumeTxt">Position : </p>
+											<p data-code="gender" class="resumeTxt">Gender : </p>
+											<p data-code="merried" class="resumeTxt">Marital status : </p>
+											<p data-code="city" class="resumeTxt">City : </p>
+											<p data-code="phone" class="resumeTxt">Phone : </p>
+											<p data-code="email" class="resumeTxt">Email : </p>
+											<p data-code="skayp" class="resumeTxt">Skayp : </p>
+											<p data-code="git" class="resumeTxt">Git : </p>
+											<p data-code="web" class="resumeTxt">Web : </p>
 										</div>
 									</div>
 									<hr class="resLine">
 									<div id="block_2" class="resumeBlock">
-										<p class="resumeTxt Title">Education:</p>
-										<div id="resumeEducation" class="blockContent"><p class="resumeTxt"></p></div>
-										<p class="resumeTxt Title">Skill:</p>
-										<div id="resumeSkill" class="blockContent"><p class="resumeTxt"></p></div>
-										<p class="resumeTxt Title">Work experience:</p>
-										<div id="resumeExperience" class="blockContent"><p class="resumeTxt"></p></div>
+										<p class="title">Education : </p>
+										<div id="resumeEducation" class="blockContent"><p data-code="education" class="resumeTxt"></p></div>
+										<p class="title">Skill : </p>
+										<div id="resumeSkill" class="blockContent"><p data-code="skill" class="resumeTxt"></p></div>
+										<p class="title">Work experience : </p>
+										<div id="resumeExperience" class="blockContent"><p data-code="experience" class="resumeTxt"></p></div>
 									</div>
 									<hr class="resLine">
 									<div id="block_3" class="resumeBlock">
-										<p class="resumeTxt Title">Language:</p>
-										<div id="resumeLanguage" class="blockContent"><p class="resumeTxt"></p></div>
-										<p class="resumeTxt Title">Goal:</p>
-										<div id="resumeGoal" class="blockContent"><p class="resumeTxt"></p></div>
-										<p class="resumeTxt Title">Highlights:</p>
-										<div id="resumeHighlights" class="blockContent"><p class="resumeTxt"></p></div>
-										<p class="resumeTxt Title">Additional information:</p>
-										<div id="resumeAdditionalInformation" class="blockContent"><p class="resumeTxt"></p></div>
-										<p class="resumeTxt Title">Hobby:</p>
-										<div id="resumeHobby" class="blockContent"><p class="resumeTxt"></p></div>
+										<p class="title">Languag : </p>
+										<div id="resumeLanguage" class="blockContent"><p data-code="language" class="resumeTxt"></p></div>
+										<p class="title">Goal : </p>
+										<div id="resumeGoal" class="blockContent"><p data-code="goal" class="resumeTxt"></p></div>
+										<p class="title">Highlights : </p>
+										<div id="resumeHighlights" class="blockContent"><p data-code="highlights" class="resumeTxt"></p></div>
+										<p class="title">Additional information : </p>
+										<div id="resumeAdditionalInformation" class="blockContent"><p data-code="additional" class="resumeTxt"></p></div>
+										<p class="title">Hobby : </p>
+										<div id="resumeHobby" class="blockContent"><p data-code="hobby" class="resumeTxt"></p></div>
 									</div>
 								</div>
 							</div>
@@ -474,24 +474,53 @@
 								<input type="button" id="btn_resume_3" class="btnResume" value="save">
 								<input type="button" id="btn_resume_4" class="btnResume" value="load">
 								<input type="button" id="btn_resume_5" class="btnResume" value="delete">
-								<input type="button" id="btn_resume_6" class="btnResume" value="delete all">
+								<input type="button" id="btn_resume_6" class="btnResume" value="delete-all">
 							</div>
 
 							<input class="btnShow" type="button" value="show" accesskey="z">
 						</div>
 						<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 						<div id="box_content_5" class="boxContent">form_statistic</div>
-						<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
+						<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 					</div>
 				</div>
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
 				<p class="blockTip">all information must be fill up in latinica!</p>
-				<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				<!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+			</div>
+		</div>
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+		<div class="winFrame">
+			<p class="winText">window for menus</p>    
+			<div class="winContent">
+
+
+			</div>
+		</div>
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+		<div class="winFrame">
+			<p class="winText">window for </p>    
+			<div class="winContent">
+
+
+			</div>
+		</div>
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+		<div class="winFrame">
+			<p class="winText">window for </p>    
+			<div class="winContent">
+
+
 			</div>
 		</div>
 
 	</div>
-
 </body>
 </html>
 
