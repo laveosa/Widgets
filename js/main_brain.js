@@ -408,70 +408,106 @@
     ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
 
     function validationCheck(obj){
-        if($(obj).val().length == 0){    
-            $(obj).css({backgroundColor: 'white'});
-        }   
-        else{
-            var D_type =  $(obj).attr("data-type");
-            switch (D_type) {
-                case "name":
-                if(infoTest.setName($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;
-                case "family":   
-                if(infoTest.setFamily($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;
-                case "position":
-                if(infoTest.setPosition($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;  
-                case "phone":
-                if(infoTest.setPhone($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;
-                case "city":
-                infoTest.setCity($(obj).val()); 
-                break;
-                case "email":
-                if(infoTest.setEmail($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;
-                case "skayp":
-                if(infoTest.setSkayp($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;
-                case "git":
-                if(infoTest.setGit($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;
-                case "web":
-                if(infoTest.setWeb($(obj).val()))
-                    $(obj).css({backgroundColor: 'lightgreen'});
-                else
-                    $(obj).css({backgroundColor: 'tomato'});
-                break;
+        var D_type =  $(obj).attr("data-type");
+        switch (D_type) {
+            case "name":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setName("");
             }
+            else if(infoTest.setName($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;
+            case "family":   
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setFamily("");
+            }
+            else if(infoTest.setFamily($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;
+            case "position":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setPosition("");
+            }
+            else if(infoTest.setPosition($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;  
+            case "phone":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setPhone("");
+            }
+            else if(infoTest.setPhone($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;
+            case "city":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setCity("");
+            }
+            else 
+                infoTest.setCity($(obj).val()); 
+            break;
+            case "email":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setEmail("");
+            }
+            else if(infoTest.setEmail($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;
+            case "skayp":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setSkayp("");
+            }
+            else if(infoTest.setSkayp($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;
+            case "git":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setGit("");
+            }
+            else if(infoTest.setGit($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;
+            case "web":
+            if($(obj).val().length == 0){   
+                $(obj).css({backgroundColor: 'white'});
+                infoTest.setWeb("");
+            }
+            else if(infoTest.setWeb($(obj).val()))
+                $(obj).css({backgroundColor: 'lightgreen'});
+            else
+                $(obj).css({backgroundColor: 'tomato'});
+            break;
         }
     }
 
 });
 
 })();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 function cc(obj){
     console.clear();
@@ -673,6 +709,217 @@ function hrManager(){
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function validationCheck(obj){
+    //     if($(obj).val().length == 0){    
+    //         $(obj).css({backgroundColor: 'white'});
+    //     }   
+    //     else{
+    //         var D_type =  $(obj).attr("data-type");
+    //         switch (D_type) {
+    //             case "name":
+    //             if(infoTest.setName($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});   
+    //             break;
+    //             case "family":   
+    //             if(infoTest.setFamily($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});
+    //             break;
+    //             case "position":
+    //             if(infoTest.setPosition($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});
+    //             break;  
+    //             case "phone":
+    //             if(infoTest.setPhone($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});
+    //             break;
+    //             case "city":
+    //             infoTest.setCity($(obj).val()); 
+    //             break;
+    //             case "email":
+    //             if(infoTest.setEmail($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});
+    //             break;
+    //             case "skayp":
+    //             if(infoTest.setSkayp($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});
+    //             break;
+    //             case "git":
+    //             if(infoTest.setGit($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});
+    //             break;
+    //             case "web":
+    //             if(infoTest.setWeb($(obj).val()))
+    //                 $(obj).css({backgroundColor: 'lightgreen'});
+    //             else
+    //                 $(obj).css({backgroundColor: 'tomato'});
+    //             break;
+    //         }
+    //     }
+    // }
+
+    // ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
