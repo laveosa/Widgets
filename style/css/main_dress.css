@@ -726,6 +726,10 @@ li.active {
     color: red;
     font-size: 26px; }
 
+#box_content_2.boxContent {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
 .aboutContFrame {
   margin: 10px;
   border-radius: 6px;
@@ -976,6 +980,7 @@ li.active {
 
 .title + .blockContent {
   min-height: 20px;
+  max-height: 100px;
   width: 96%;
   margin-left: 10px;
   overflow: hidden;

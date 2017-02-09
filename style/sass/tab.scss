@@ -687,6 +687,10 @@ $radius: 30px;
 /////   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2   set:2  /////
 /////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 
+#box_content_2.boxContent{
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
 
 .aboutContFrame{
 	margin: $mainMargin;
@@ -949,6 +953,7 @@ $radius: 30px;
 
 .title+.blockContent{
 	min-height: 20px;
+	max-height: 100px;
 	width: 96%;
 	margin-left: 10px;
 	overflow: hidden;
@@ -957,7 +962,6 @@ $radius: 30px;
 	border-bottom: 1px solid #66657E;
 	border-left: 4px solid #66657E;
 	border-right: 4px solid #66657E;
-	// @include br();
 }
 
 
