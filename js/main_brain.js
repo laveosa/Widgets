@@ -506,47 +506,38 @@
         ////+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++///
 
         $(".btnResume[value=show]").on("click", function(){
-           var elem = document.querySelectorAll(".resumeTxt[data-code]");
-           var i = 0;
+            var elem = document.querySelectorAll(".resumeTxt");
+            for (var i = 0; i < elem.length; i++)
+                setVal($(elem).eq(i).attr("data-code"));
+            
+            var arr = infoTest.getEducation();
+            elem = document.querySelector(".resumeTxt[data-code=education]");
+            elem.innerHTML = "";
+            for (var i = 1; i <= 3; i++) {
+                var path = "#tr_"+i;
+                if(arr[path].key != undefined && arr[path].key != "")
+                    elem.innerHTML += arr[path].key + " | " + arr[path].value + "<br/>";
+            }
 
-           for(e in infoTest){
-                if(e.substr(0, 3) == "get"){
-                    if(infoTest[e]() != undefined){
-                        var text = elem[i].innerHTML.split(": ");
-                        elem[i].innerHTML = text[0] + " : ";
-                        elem[i].innerHTML += infoTest[e]();    
-                    }
-                    else if(infoTest[e]() == undefined){
-                        var text = elem[i].innerHTML.split(": ");
-                        elem[i].innerHTML = text[0] + " : ";
-                        elem[i].innerHTML += "none";
-                    }
-                    i++;
+            arr = infoTest.getExperience();
+            elem = document.querySelector(".resumeTxt[data-code=experience]");
+            elem.innerHTML = "";
+            for (var i = 4; i <= 6; i++) {
+                var path = "#tr_"+i;
+                if(arr[path].key != undefined && arr[path].key != "")
+                    elem.innerHTML += arr[path].key + " | " + arr[path].value + "<br/>";
+            }
+
+            function setVal(eva){
+                var path = "get"+eva.charAt(0).toUpperCase() + eva.substr(1);
+                $(".resumeTxt[data-code="+eva+"]").html(infoTest[path]());
+                if(eva == "language"){
+                    var lang = infoTest.getLanguage();
+                    for (var i = 0; i < 3; i++) 
+                        if(lang[i].key != undefined && lang[i].key != "")
+                            document.querySelector(".resumeTxt[data-code="+eva+"]").innerHTML += lang[i].key + "-" + lang[i].value + " | ";
                 }
-           }
-
-           elem = document.querySelector(".resumeTxt[data-code=education]");
-           elem.innerHTML = "";
-           var arr = infoTest.getEducation();
-
-           for (var i = 1; i <= 3; i++) {
-               if(arr["#tr_"+i].key != undefined)
-                elem.innerHTML += arr["#tr_"+i].key + " | " + arr["#tr_"+i].value + "<br/>";     
-           }
-
-           // if(arr["#tr_1"].key != undefined)
-           //      elem.innerHTML = arr["#tr_1"].key + " | " + arr["#tr_1"].value + "<br/>";     
-
-
-           elem = document.querySelector(".resumeTxt[data-code=language]");
-           elem.innerHTML = "";
-           var arr = infoTest.getLanguage();
-
-           for (var i = 0; i < arr.length; i++) {
-               if(arr[i].key != undefined || arr[i].key != "")
-                elem.innerHTML += arr[i].key + "-" + arr[i].value + "  |  ";
-           }
-
+            }
         });
 
         $(".btnResume[value=confirm]").on("click", function(){
@@ -590,25 +581,25 @@ function hrManager(){
     var patternEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var patternUrl = /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,4})/;
 
-    var _name;
-    var _family;
-    var _position;
+    var _name = undefined;
+    var _family = undefined;
+    var _position = undefined;
     var _gender = "male";
     var _maritalStatus = "single";
-    var _city;
-    var _phone;
-    var _email;
-    var _skayp; 
-    var _git;
-    var _web;
-    var _skills;
+    var _city = undefined;
+    var _phone = undefined;
+    var _email = undefined;
+    var _skayp = undefined; 
+    var _git = undefined;
+    var _web = undefined;
+    var _skills = undefined;
     var _education = new Array();
     var _experience = new Array();
     var _language = new Array();
-    var _goal;
-    var _highlights;
-    var _additional_information;
-    var _hobby;
+    var _goal = undefined;
+    var _highlights = undefined;
+    var _additional_information = undefined;
+    var _hobby = undefined;
 
 
     /////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////

@@ -894,7 +894,7 @@ $radius: 30px;
 	@include font(Dehuti, 34px);
 	margin: auto;
 	min-height: 1100px;
-	min-width: 1160px;
+	width: 900px;
 	background-color: #fff;
 }
 
@@ -933,22 +933,31 @@ $radius: 30px;
 	overflow: hidden;
 }
 
+.blockContentFIO p,
+.blockContentFIO span,
 .resumeTxt{
 	margin: 0px;
 	padding: 0px;
 }
 
 .title{
-	@extend .resumeTxt;
+	margin: 0px;
+	padding: 0px;
 	font-size: 45px;
 	font-weight: bold;
 }
 
 .title+.blockContent{
 	min-height: 20px;
-	width: 98%;
+	width: 96%;
 	margin-left: 10px;
 	overflow: hidden;
+	border-radius: 10px;
+	border-top: 1px solid #66657E;
+	border-bottom: 1px solid #66657E;
+	border-left: 4px solid #66657E;
+	border-right: 4px solid #66657E;
+	// @include br();
 }
 
 

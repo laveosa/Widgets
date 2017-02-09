@@ -716,7 +716,7 @@ li.active {
   text-align: start;
   margin: auto;
   min-height: 1100px;
-  min-width: 1160px;
+  width: 900px;
   background-color: #fff; }
 
 .resumeBlock {
@@ -741,18 +741,27 @@ li.active {
   width: 100%;
   overflow: hidden; }
 
-.resumeTxt, .title {
+.blockContentFIO p,
+.blockContentFIO span,
+.resumeTxt {
   margin: 0px;
   padding: 0px; }
 
 .title {
+  margin: 0px;
+  padding: 0px;
   font-size: 45px;
   font-weight: bold; }
 
 .title + .blockContent {
   min-height: 20px;
-  width: 98%;
+  width: 96%;
   margin-left: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 10px;
+  border-top: 1px solid #66657E;
+  border-bottom: 1px solid #66657E;
+  border-left: 4px solid #66657E;
+  border-right: 4px solid #66657E; }
 
 /*# sourceMappingURL=tab.css.map */
