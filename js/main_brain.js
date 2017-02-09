@@ -528,6 +528,17 @@
                     elem.innerHTML += arr[path].key + " | " + arr[path].value + "<br/>";
             }
 
+            if(infoTest.youReady()){
+                $(".btnResume[value=confirm]").removeAttr('disabled');
+                $(".btnResume[value=save]").removeAttr('disabled');                
+            }
+            else {
+                $(".btnResume[value=confirm]").att('disabled', 'disabled');
+                $(".btnResume[value=save]").att('disabled', 'disabled');
+            }
+
+            
+            
             function setVal(eva){
                 var path = "get"+eva.charAt(0).toUpperCase() + eva.substr(1);
                 $(".resumeTxt[data-code="+eva+"]").html(infoTest[path]());

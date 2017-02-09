@@ -339,9 +339,9 @@ li.active {
   padding: 0px;
   list-style: none; }
   .boxMarksConteiner li:first-child {
-    border-left: 4px solid blue; }
+    border-left: 4px solid #3D3DC1; }
   .boxMarksConteiner li:last-child {
-    border-right: 4px solid blue; }
+    border-right: 4px solid #3D3DC1; }
 
 .boxMark {
   cursor: pointer;
@@ -349,11 +349,11 @@ li.active {
   width: 60px;
   height: 40px;
   display: flex;
-  border: 4px solid blue;
+  border: 4px solid #3D3DC1;
   border-bottom: 0;
-  border-left: 4px dotted blue;
-  border-right: 4px dotted blue;
-  background-color: blue; }
+  border-left: 4px dotted #3D3DC1;
+  border-right: 4px dotted #3D3DC1;
+  background-color: #3D3DC1; }
   .boxMark p {
     color: white;
     margin: auto; }
@@ -365,12 +365,12 @@ li.active {
   display: flex;
   background-color: white; }
   .boxMarkActive p, .boxMark:hover p {
-    color: blue;
+    color: #3D3DC1;
     margin: auto;
     pointer-events: none; }
 
 .boxBody {
-  border: 4px solid blue; }
+  border: 4px solid #3D3DC1; }
   .boxBody div {
     padding: 4px; }
 
@@ -416,14 +416,14 @@ li.active {
     display: flex; }
 
 .rowMainTitle {
-  border: 1px solid blue;
+  border: 1px solid #3D3DC1;
   border-radius: 30px 0 0 30px;
-  background-color: blue; }
+  background-color: #3D3DC1; }
   .rowMainTitle p {
     color: white; }
 
 .rowMainContent {
-  border: 1px solid blue;
+  border: 1px solid #3D3DC1;
   border-radius: 0 30px 30px 0;
   width: 100%;
   overflow: hidden; }
@@ -487,7 +487,7 @@ li.active {
   display: none; }
 
 .btnSet {
-  border: 1px solid blue;
+  border: 1px solid #3D3DC1;
   border-radius: 20px;
   text-align: center;
   line-height: 26px;
@@ -496,15 +496,15 @@ li.active {
   margin: auto;
   cursor: pointer;
   transition: all 300ms ease-in-out;
-  background-color: blue;
+  background-color: #3D3DC1;
   color: white; }
   .btnSet:hover {
     background-color: white;
-    color: blue; }
+    color: #3D3DC1; }
 
 .btnSetActive {
   background-color: white;
-  color: blue; }
+  color: #3D3DC1; }
 
 .cityList {
   width: 96%; }
@@ -545,8 +545,8 @@ li.active {
 .aboutContFrame {
   margin: 10px;
   border-radius: 6px;
-  border: 1px solid blue;
-  background-color: blue; }
+  border: 1px solid #3D3DC1;
+  background-color: #3D3DC1; }
   .aboutContFrame * {
     margin: 0px;
     padding: 0px; }
@@ -564,11 +564,11 @@ li.active {
   background-color: #FFF; }
 
 .aboutTitle {
-  color: blue; }
+  color: #3D3DC1; }
 
 .totalTable {
   width: 100%;
-  color: blue; }
+  color: #3D3DC1; }
   .totalTable tr th:first-child {
     width: 300px; }
   .totalTable td {
@@ -667,11 +667,9 @@ li.active {
   float: left; }
 
 #check_conteiner_1.checkConteiner {
-  border: 4px solid blue;
   width: 77%;
   overflow-x: scroll;
-  overflow-y: scroll;
-  background-color: #C3C1E2; }
+  overflow-y: scroll; }
 
 #check_conteiner_2.checkConteiner {
   width: 20%;
@@ -683,7 +681,7 @@ li.active {
   cursor: pointer;
   transition: all 300ms ease-in-out;
   font-family: Alegreya Sans;
-  font-size: 26px;
+  font-size: 35px;
   font-style: normal;
   font-weight: normal;
   text-align: start;
@@ -694,12 +692,12 @@ li.active {
   width: auto;
   height: 60px;
   margin: 2px;
-  border: 4px solid blue;
-  background-color: blue;
+  border: 4px solid #3D3DC1;
+  background-color: #3D3DC1;
   border-radius: 8px; }
   .btnResume:hover {
     background-color: #fff;
-    color: blue; }
+    color: #3D3DC1; }
   .btnResume:disabled {
     background-color: #3B3B43;
     border-color: #3B3B43;

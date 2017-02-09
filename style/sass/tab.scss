@@ -9,7 +9,7 @@
 ///                                                                                      /// 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-
+$mainColor: #3D3DC1;
 $mainMargin: 10px;
    
 .tabTop{
@@ -426,10 +426,10 @@ $content-brd-radius: 6px;
 	padding: 0px;
 	list-style: none;
 	& li:first-child{
-		border-left: $borderTotal solid blue;
+		border-left: $borderTotal solid $mainColor;
 	}
 	& li:last-child{
-		border-right: $borderTotal solid blue;
+		border-right: $borderTotal solid $mainColor;
 	}
 }
 
@@ -439,11 +439,11 @@ $content-brd-radius: 6px;
 	width: 60px;
 	height: 40px;
 	display: flex;
-	border: $borderTotal solid blue;
+	border: $borderTotal solid $mainColor;
 	border-bottom: 0;
-	border-left: $borderTotal dotted blue;
-	border-right: $borderTotal dotted blue;
-	background-color: blue;
+	border-left: $borderTotal dotted $mainColor;
+	border-right: $borderTotal dotted $mainColor;
+	background-color: $mainColor;
 	& p{
 		color: white;
 		margin: auto;
@@ -457,7 +457,7 @@ $content-brd-radius: 6px;
 	display: flex;
 	background-color: white;
 	& p{
-		color: blue;
+		color: $mainColor;
 		margin: auto;
 		pointer-events: none;    //// nice mmmm... )))
 	}
@@ -468,7 +468,7 @@ $content-brd-radius: 6px;
 }
 
 .boxBody{
-	border: $borderTotal solid blue;
+	border: $borderTotal solid $mainColor;
 	& div{
 		padding: 4px;
 	}
@@ -531,16 +531,16 @@ $radius: 30px;
 }
 
 .rowMainTitle{
-	border: 1px solid blue;
+	border: 1px solid $mainColor;
 	border-radius: $radius 0 0 $radius;
-	background-color: blue;
+	background-color: $mainColor;
 	& p{
 		color: white;
 	}
 }
 
 .rowMainContent{
-	border: 1px solid blue;
+	border: 1px solid $mainColor;
 	border-radius: 0 $radius $radius 0;
 	width: 100%;
 	overflow: hidden;
@@ -616,7 +616,7 @@ $radius: 30px;
 }
 
 .btnSet{
-	border: 1px solid blue;
+	border: 1px solid $mainColor;
 	border-radius: 20px;
 	text-align: center;
 	line-height: 26px;
@@ -625,17 +625,17 @@ $radius: 30px;
 	margin: auto;
 	cursor: pointer;
 	transition: all 300ms ease-in-out;
-	background-color: blue;
+	background-color: $mainColor;
 	color: white;
 	&:hover{
 		background-color: white;
-		color: blue;
+		color: $mainColor;
 	}
 }
 
 .btnSetActive{
 	background-color: white;
-	color: blue;
+	color: $mainColor;
 }
 
 .cityList{
@@ -695,8 +695,8 @@ $radius: 30px;
 .aboutContFrame{
 	margin: $mainMargin;
 	border-radius: $content-brd-radius;
-	@include br(1px, solid, blue);
-	background-color: blue;
+	@include br(1px, solid, $mainColor);
+	background-color: $mainColor;
 	& *{
 		margin: 0px;
 		padding: 0px;
@@ -720,12 +720,12 @@ $radius: 30px;
 }
 
 .aboutTitle{
-	color: blue;
+	color: $mainColor;
 }
 
 .totalTable{
 	width: 100%;
-	color: blue;
+	color: $mainColor;
 	& tr th:first-child{
 		width: 300px;
 	}
@@ -830,6 +830,8 @@ $radius: 30px;
 /////   check   check   check   check   check   check   check   check   check   check   check   check   check  /////
 /////++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/////
 
+
+
 #box_content_4.boxContent{
 	
 }
@@ -842,11 +844,11 @@ $radius: 30px;
 }
 
 #check_conteiner_1.checkConteiner{
-	@include br(4px, solid, blue);
+	// @include br(4px, solid, $mainColor);
 	width: 77%;
 	overflow-x: scroll;
 	overflow-y: scroll;
-	background-color: #C3C1E2;
+	// background-color: #C3C1E2;
 }
 
 #check_conteiner_2.checkConteiner{
@@ -860,7 +862,7 @@ $radius: 30px;
 .btnResume{
 	cursor: pointer;
 	transition: all 300ms ease-in-out;
-	@include font(Alegreya Sans, 26px);
+	@include font(Alegreya Sans, 35px);
 	text-align: center;
 	line-height: 60px;
 	color: white;
@@ -868,12 +870,12 @@ $radius: 30px;
 	width: auto;
 	height: 60px;
 	margin: 2px;
-	border: 4px solid blue;
-	background-color: blue;
+	border: 4px solid $mainColor;
+	background-color: $mainColor;
 	border-radius: 8px;
 	&:hover{
 		background-color: #fff;
-		color: blue;
+		color: $mainColor;
 	}
 	&:disabled{
 		background-color: #3B3B43;
