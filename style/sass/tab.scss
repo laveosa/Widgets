@@ -866,9 +866,8 @@ $radius: 30px;
 	text-align: center;
 	line-height: 60px;
 	color: white;
-	flex-grow: 1;
 	width: auto;
-	height: 60px;
+	height: 80px;
 	margin: 2px;
 	border: 4px solid $mainColor;
 	background-color: $mainColor;
@@ -911,14 +910,6 @@ $radius: 30px;
 #block_1.resumeBlock{
 	display: flex;
 	flex-direction: row;
-}
-
-#block_2.resumeBlock{
-	
-}
-
-#block_3.resumeBlock{
-	
 }
 
 .resumePhoto{

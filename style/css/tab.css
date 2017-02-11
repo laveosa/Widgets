@@ -688,9 +688,8 @@ li.active {
   text-align: center;
   line-height: 60px;
   color: white;
-  flex-grow: 1;
   width: auto;
-  height: 60px;
+  height: 80px;
   margin: 2px;
   border: 4px solid #3D3DC1;
   background-color: #3D3DC1;

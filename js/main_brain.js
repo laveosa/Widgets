@@ -528,16 +528,6 @@
                     elem.innerHTML += arr[path].key + " | " + arr[path].value + "<br/>";
             }
 
-            if(infoTest.youReady()){
-                $(".btnResume[value=confirm]").removeAttr('disabled');
-                $(".btnResume[value=save]").removeAttr('disabled');                
-            }
-            else {
-                $(".btnResume[value=confirm]").att('disabled', 'disabled');
-                $(".btnResume[value=save]").att('disabled', 'disabled');
-            }
-
-            
             
             function setVal(eva){
                 var path = "get"+eva.charAt(0).toUpperCase() + eva.substr(1);
@@ -551,30 +541,22 @@
             }
         });
 
-        $(".btnResume[value=confirm]").on("click", function(){
-            
-        });
-
-        $(".btnResume[value=save]").on("click", function(){
-            
-        });
-
-        $(".btnResume[value=load]").on("click", function(){
-            
-        });
-
-        $(".btnResume[value=delete]").on("click", function(){
-            
-        });
-
-        $(".btnResume[value=delete-all]").on("click", function(){
-            
-        });
-
     /////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>////////                
     });
 })();
 
+//////////////////////
+///      MENU      ///
+//////////////////////
+(function(){
+    $(document).ready(function(){
+
+        $("#menu_one > li").has("ul").css({
+            borderBottom: "1px solid #8FC6F9"
+        });
+
+    });
+})();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
