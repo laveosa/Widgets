@@ -226,22 +226,88 @@ $imgSize: 40px;
 	 
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////     third_menu     third_menu     third_menu     third_menu     third_menu     third_menu     third_menu
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$iconImg: 80px;
+
+#menu_conteiner_3.face{
+	@include font(Higher, 36px);
+	margin: 0px 20px;
+	padding: 0px;
+	background-color: #0A0A14;
+	& *{
+		overflow: hidden;	
+	}
+}
+
+.menuIcon{
+	background-color: #E8E8E7;
+	width: 100%;
+	height: auto;
+	float: left;
+	border-radius: 5px;
+	margin: 40px 10px;
+	padding: 0px;
+	list-style: none;
+	display: flex;
+	& li{
+		transition: all 300ms ease-in-out;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		float: left;
+		width: 80px;
+		position: relative;
+		border-right: 1px solid #B9B9B9;
+		& a{
+			pointer-events: none;
+			color: #888;
+			text-decoration: none;
+			text-align: center;
+			line-height: 145%;
+			display: block;
+		}
+		&:hover{
+			transition: all 600ms ease-in-out;
+			background-color: #B9B9B9;
+			& a{
+				transition: all 600ms ease-in-out;
+				color: #E8E8E7;
+			}
+			& img{
+				transform: rotate(360deg);
+			}
+		}
+	}
+}
+
+.icoMenu{
+	width: $iconImg;
+	height: $iconImg;
+	margin: auto;
+	position: relative;
+	top: 4px;
+	transition: all 600ms ease-in;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////     four_menu     four_menu     four_menu     four_menu     four_menu     four_menu     four_menu
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////     
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////     
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
