@@ -413,30 +413,71 @@ $color_6: #758E3A;
 .chanMen > div:nth-child(6){background-color: $color_6;}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////     
+///////     left_menu     left_menu     left_menu     left_menu     left_menu     left_menu     left_menu
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+$widhtLmenu: 200px;
+
+#menu_conteiner_5.face{
+	// @include tend();
+	justify-content: flex-start;
+	& *{
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		list-style: none;
+	}
+}
+
+.menuGroup{
+	background-color: #263238;
+	color: #fff;
+	position: relative;
+	& li{
+		border:2px solid lightgrey;
+		height: 40px;
+		width: $widhtLmenu;
+		line-height: 40px;
+		&:hover{
+			& p{
+				left: 16px;
+			}
+			& .inGroup{
+				display: block;
+			}
+		}
+		& p{
+			transition: all 300ms ease-in-out;
+			position: relative;
+			left: 10px;
+			pointer-events: none;
+		}
+	}
+}
+
+.inGroup{
+	display: none;
+	background-color: #263238;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: $widhtLmenu;
+	& a{
+		transition: all 300ms ease-in-out;
+		position: relative;
+		left: 10px;
+		color: #fff;
+		&:hover{
+			left: 16px;
+		}
+	
+	}
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////     
+///////     menu_animation     menu_animation     menu_animation     menu_animation     menu_animation
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1435,6 +1435,54 @@ li.active {
 .chanMen > div:nth-child(6) {
   background-color: #758E3A; }
 
+#menu_conteiner_5.face {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+  #menu_conteiner_5.face * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none; }
+
+.menuGroup {
+  background-color: #263238;
+  color: #fff;
+  position: relative; }
+  .menuGroup li {
+    border: 2px solid lightgrey;
+    height: 40px;
+    width: 200px;
+    line-height: 40px; }
+    .menuGroup li:hover p {
+      left: 16px; }
+    .menuGroup li:hover .inGroup {
+      display: block; }
+    .menuGroup li p {
+      -webkit-transition: all 300ms ease-in-out;
+              transition: all 300ms ease-in-out;
+      position: relative;
+      left: 10px;
+      pointer-events: none; }
+
+.inGroup {
+  display: none;
+  background-color: #263238;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 200px; }
+  .inGroup a {
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+    position: relative;
+    left: 10px;
+    color: #fff; }
+    .inGroup a:hover {
+      left: 16px; }
+
 body {
   background-image: url("../../image/main_bg.jpg");
   background-size: cover;

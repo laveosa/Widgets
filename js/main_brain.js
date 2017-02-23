@@ -574,25 +574,25 @@ function hrManager(){
     var patternEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var patternUrl = /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,4})/;
 
-    var _name = undefined;
-    var _family = undefined;
-    var _position = undefined;
+    var _name;
+    var _family;
+    var _position;
     var _gender = "male";
     var _maritalStatus = "single";
-    var _city = undefined;
-    var _phone = undefined;
-    var _email = undefined;
-    var _skayp = undefined; 
-    var _git = undefined;
-    var _web = undefined;
-    var _skills = undefined;
+    var _city;
+    var _phone;
+    var _email;
+    var _skayp; 
+    var _git;
+    var _web;
+    var _skills;
     var _education = new Array();
     var _experience = new Array();
     var _language = new Array();
-    var _goal = undefined;
-    var _highlights = undefined;
-    var _additional_information = undefined;
-    var _hobby = undefined;
+    var _goal;
+    var _highlights;
+    var _additional_information;
+    var _hobby;
 
 
     /////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//////
