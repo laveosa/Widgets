@@ -420,6 +420,7 @@ $widhtLmenu: 200px;
 
 #menu_conteiner_5.face{
 	// @include tend();
+	@include font(Beer money, 20);
 	justify-content: flex-start;
 	& *{
 		margin: 0;
@@ -430,12 +431,12 @@ $widhtLmenu: 200px;
 }
 
 .menuGroup{
-	background-color: #263238;
 	color: #fff;
 	position: relative;
 	& li{
-		border:2px solid lightgrey;
-		height: 40px;
+		background-color: #263238;
+		border-bottom:2px solid lightgrey;
+		min-height: 40px;
 		width: $widhtLmenu;
 		line-height: 40px;
 		&:hover{
@@ -443,7 +444,7 @@ $widhtLmenu: 200px;
 				left: 16px;
 			}
 			& .inGroup{
-				display: block;
+				top: 0;
 			}
 		}
 		& p{
@@ -452,22 +453,46 @@ $widhtLmenu: 200px;
 			left: 10px;
 			pointer-events: none;
 		}
+		&:first-child{
+			border-radius: 6px 6px 0px 0px;
+			
+		}
+		&:last-child{
+			border-radius: 0px 0px 6px 6px;
+			border: 0;
+
+		}
 	}
 }
 
 .inGroup{
-	display: none;
-	background-color: #263238;
+	transition: all 300ms ease-in-out;
 	overflow: hidden;
 	position: absolute;
-	top: 0;
+	border-left: 4px solid #fff;
+	top: 300px;
 	bottom: 0;
 	left: $widhtLmenu;
+	& li{
+		display: flex;
+		background-color: #263238;
+		&:first-child{
+			border-radius: 6px 6px 0px 0px;
+			
+		}
+		&:last-child{
+			border-radius: 0px 0px 6px 6px;
+			border: 0;
+
+		}
+	}
 	& a{
 		transition: all 300ms ease-in-out;
 		position: relative;
 		left: 10px;
 		color: #fff;
+		width: 100%;
+		height: 100%;
 		&:hover{
 			left: 16px;
 		}
@@ -478,6 +503,110 @@ $widhtLmenu: 200px;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////     menu_animation     menu_animation     menu_animation     menu_animation     menu_animation
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.annimCover{
+	// @include tend();
+	text-align: center;
+	height: 500px;
+	& *{
+		list-style: none;
+	}
+	
+	& > ul{
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		background: #ddd;
+		border-radius: 5px;
+	
+		& > li{
+			width: 150px;
+			height: 65px;
+			line-height: 65px;
+			position: relative;
+			text-transfrom: uppercase;
+			font-size: 14px;
+			color: rgba(0,0,0,0.7);
+			cursor: pointer;
+	
+			&:hover{
+				background: #d5d5d5;
+				border-radius: 5px;
+			}
+		}
+	}
+}
+
+ul.menuAnn{
+	display: flex;
+	flex-direction: row;
+	& li{
+		&:hover ul.drop_menu li{
+			display: block;
+		}
+	}
+}
+
+ul.drop_menu{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	left: 0%;
+	width: 100%;
+	padding: 0;
+	
+	& li{
+		display: none;
+		background: #666;
+		color: rgba(255,255,255,0.7);
+		
+		&:hover{
+			background: #606060;
+		}
+
+		&:last-child{
+			border-radius: 0px 0px 5px 5px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

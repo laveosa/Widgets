@@ -1436,6 +1436,11 @@ li.active {
   background-color: #758E3A; }
 
 #menu_conteiner_5.face {
+  font-family: Beer money;
+  font-size: 20;
+  font-style: normal;
+  font-weight: normal;
+  text-align: start;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
@@ -1447,41 +1452,121 @@ li.active {
     list-style: none; }
 
 .menuGroup {
-  background-color: #263238;
   color: #fff;
   position: relative; }
   .menuGroup li {
-    border: 2px solid lightgrey;
-    height: 40px;
+    background-color: #263238;
+    border-bottom: 2px solid lightgrey;
+    min-height: 40px;
     width: 200px;
     line-height: 40px; }
     .menuGroup li:hover p {
       left: 16px; }
     .menuGroup li:hover .inGroup {
-      display: block; }
+      top: 0; }
     .menuGroup li p {
       -webkit-transition: all 300ms ease-in-out;
               transition: all 300ms ease-in-out;
       position: relative;
       left: 10px;
       pointer-events: none; }
+    .menuGroup li:first-child {
+      border-radius: 6px 6px 0px 0px; }
+    .menuGroup li:last-child {
+      border-radius: 0px 0px 6px 6px;
+      border: 0; }
 
 .inGroup {
-  display: none;
-  background-color: #263238;
+  -webkit-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
   overflow: hidden;
   position: absolute;
-  top: 0;
+  border-left: 4px solid #fff;
+  top: 300px;
   bottom: 0;
   left: 200px; }
+  .inGroup li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #263238; }
+    .inGroup li:first-child {
+      border-radius: 6px 6px 0px 0px; }
+    .inGroup li:last-child {
+      border-radius: 0px 0px 6px 6px;
+      border: 0; }
   .inGroup a {
     -webkit-transition: all 300ms ease-in-out;
             transition: all 300ms ease-in-out;
     position: relative;
     left: 10px;
-    color: #fff; }
+    color: #fff;
+    width: 100%;
+    height: 100%; }
     .inGroup a:hover {
       left: 16px; }
+
+.annimCover {
+  text-align: center;
+  height: 500px; }
+  .annimCover * {
+    list-style: none; }
+  .annimCover > ul {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    background: #ddd;
+    border-radius: 5px; }
+    .annimCover > ul > li {
+      width: 150px;
+      height: 65px;
+      line-height: 65px;
+      position: relative;
+      text-transfrom: uppercase;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.7);
+      cursor: pointer; }
+      .annimCover > ul > li:hover {
+        background: #d5d5d5;
+        border-radius: 5px; }
+
+ul.menuAnn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  ul.menuAnn li:hover ul.drop_menu li {
+    display: block; }
+
+ul.drop_menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  padding: 0; }
+  ul.drop_menu li {
+    display: none;
+    background: #666;
+    color: rgba(255, 255, 255, 0.7); }
+    ul.drop_menu li:hover {
+      background: #606060; }
+    ul.drop_menu li:last-child {
+      border-radius: 0px 0px 5px 5px; }
 
 body {
   background-image: url("../../image/main_bg.jpg");
