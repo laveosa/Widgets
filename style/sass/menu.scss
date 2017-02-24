@@ -575,13 +575,74 @@ ul.drop_menu{
 
 .menuAnn{
 	& li:hover{
-		& ul.drop_menu.dMenu_1 li{
-			opacity: 0;
-			animation:{
-				name: menu_1;
-				duration: 300ms;
-				timing-function: ease-in-out;
-				fill-mode: forwards;
+		& ul.drop_menu.dMenu_1{
+			// perspective: 1000px;
+			& li{
+				opacity: 0;
+				@for $i from 1 through 6{
+					&:nth-child(#{$i}){
+						animation:{
+							name: menu_1;
+							duration: 300ms * $i;
+							// delay: (150ms * $i) - 300;  // another option
+							timing-function: ease-in-out;
+							fill-mode: forwards;
+						}
+					}
+				}
+			}
+		} 
+		& ul.drop_menu.dMenu_2{
+			& li{
+				opacity: 0;
+				transform-origin: top center;
+
+				@for $i from 1 through 6{
+					&:nth-child(#{$i}){
+						animation:{
+							name: menu_2;
+							duration: 300ms;
+							delay: (150ms * $i) - 300;  
+							timing-function: ease-in-out;
+							fill-mode: forwards;
+						}
+					}
+				}
+			}
+		} 
+		& ul.drop_menu.dMenu_3{
+			& li{
+				opacity: 0;
+				
+				@for $i from 1 through 6{
+					&:nth-child(#{$i}){
+						animation:{
+							name: menu_3;
+							duration: 300ms;
+							delay: (150ms * $i) - 300;  
+							timing-function: ease-in-out;
+							fill-mode: forwards;
+						}
+					}
+				}
+			}
+		}
+		& ul.drop_menu.dMenu_4{
+			& li{
+				opacity: 0;
+				transform-origin: top right;
+				
+				@for $i from 1 through 6{
+					&:nth-child(#{$i}){
+						animation:{
+							name: menu_4;
+							duration: 300ms;
+							delay: (150ms * $i) - 300;  
+							timing-function: ease-in-out;
+							fill-mode: forwards;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -591,17 +652,52 @@ ul.drop_menu{
 @keyframes menu_1{
 	0%{
 		opacity: 0;
+		transform: rotate(-90deg) translateX(130px);
 	}
 	100%{
 		opacity: 1;
+		transform: rotate(0 deg) translateX(0px);
 	}
 }
 
+@keyframes menu_2{
+	0%{
+		opacity: 0;
+		transform: rotateX(-90deg);
+	}
+	60%{
+		transform: rotateX(50deg);	
+	}
+	100%{
+		opacity: 1;
+		transform: rotateX(0 deg);
+	}
+}
 
+@keyframes menu_3{
+	0%{
+		opacity: 0;
+		transform: scale(0.3) translateY(-60px);
+	}
+	80%{
+		transform: scale(1.2) translateY(10px);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1) translateY(0px);
+	}
+}
 
-
-
-
+@keyframes menu_4{
+	0%{
+		opacity: 0;
+		transform: rotate(-30deg) translateX(30px);
+	}
+	100%{
+		opacity: 1;
+		transform: rotate(0deg) translateX(0px);
+	}
+}
 
 
 

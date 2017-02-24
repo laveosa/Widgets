@@ -1569,27 +1569,357 @@ ul.drop_menu {
       border-radius: 0px 0px 5px 5px; }
 
 .menuAnn li:hover ul.drop_menu.dMenu_1 li {
+  opacity: 0; }
+  .menuAnn li:hover ul.drop_menu.dMenu_1 li:nth-child(1) {
+    -webkit-animation-name: menu_1;
+            animation-name: menu_1;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_1 li:nth-child(2) {
+    -webkit-animation-name: menu_1;
+            animation-name: menu_1;
+    -webkit-animation-duration: 600ms;
+            animation-duration: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_1 li:nth-child(3) {
+    -webkit-animation-name: menu_1;
+            animation-name: menu_1;
+    -webkit-animation-duration: 900ms;
+            animation-duration: 900ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_1 li:nth-child(4) {
+    -webkit-animation-name: menu_1;
+            animation-name: menu_1;
+    -webkit-animation-duration: 1200ms;
+            animation-duration: 1200ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_1 li:nth-child(5) {
+    -webkit-animation-name: menu_1;
+            animation-name: menu_1;
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_1 li:nth-child(6) {
+    -webkit-animation-name: menu_1;
+            animation-name: menu_1;
+    -webkit-animation-duration: 1800ms;
+            animation-duration: 1800ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+.menuAnn li:hover ul.drop_menu.dMenu_2 li {
   opacity: 0;
-  -webkit-animation-name: menu_1;
-          animation-name: menu_1;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards; }
+  -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+          transform-origin: top center; }
+  .menuAnn li:hover ul.drop_menu.dMenu_2 li:nth-child(1) {
+    -webkit-animation-name: menu_2;
+            animation-name: menu_2;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: -150ms;
+            animation-delay: -150ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_2 li:nth-child(2) {
+    -webkit-animation-name: menu_2;
+            animation-name: menu_2;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_2 li:nth-child(3) {
+    -webkit-animation-name: menu_2;
+            animation-name: menu_2;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 150ms;
+            animation-delay: 150ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_2 li:nth-child(4) {
+    -webkit-animation-name: menu_2;
+            animation-name: menu_2;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_2 li:nth-child(5) {
+    -webkit-animation-name: menu_2;
+            animation-name: menu_2;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 450ms;
+            animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_2 li:nth-child(6) {
+    -webkit-animation-name: menu_2;
+            animation-name: menu_2;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+            animation-delay: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+.menuAnn li:hover ul.drop_menu.dMenu_3 li {
+  opacity: 0; }
+  .menuAnn li:hover ul.drop_menu.dMenu_3 li:nth-child(1) {
+    -webkit-animation-name: menu_3;
+            animation-name: menu_3;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: -150ms;
+            animation-delay: -150ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_3 li:nth-child(2) {
+    -webkit-animation-name: menu_3;
+            animation-name: menu_3;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_3 li:nth-child(3) {
+    -webkit-animation-name: menu_3;
+            animation-name: menu_3;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 150ms;
+            animation-delay: 150ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_3 li:nth-child(4) {
+    -webkit-animation-name: menu_3;
+            animation-name: menu_3;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_3 li:nth-child(5) {
+    -webkit-animation-name: menu_3;
+            animation-name: menu_3;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 450ms;
+            animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_3 li:nth-child(6) {
+    -webkit-animation-name: menu_3;
+            animation-name: menu_3;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+            animation-delay: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+.menuAnn li:hover ul.drop_menu.dMenu_4 li {
+  opacity: 0;
+  -webkit-transform-origin: top right;
+      -ms-transform-origin: top right;
+          transform-origin: top right; }
+  .menuAnn li:hover ul.drop_menu.dMenu_4 li:nth-child(1) {
+    -webkit-animation-name: menu_4;
+            animation-name: menu_4;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: -150ms;
+            animation-delay: -150ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_4 li:nth-child(2) {
+    -webkit-animation-name: menu_4;
+            animation-name: menu_4;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_4 li:nth-child(3) {
+    -webkit-animation-name: menu_4;
+            animation-name: menu_4;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 150ms;
+            animation-delay: 150ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_4 li:nth-child(4) {
+    -webkit-animation-name: menu_4;
+            animation-name: menu_4;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_4 li:nth-child(5) {
+    -webkit-animation-name: menu_4;
+            animation-name: menu_4;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 450ms;
+            animation-delay: 450ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  .menuAnn li:hover ul.drop_menu.dMenu_4 li:nth-child(6) {
+    -webkit-animation-name: menu_4;
+            animation-name: menu_4;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: 600ms;
+            animation-delay: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
 
 @-webkit-keyframes menu_1 {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transform: rotate(-90deg) translateX(130px);
+            transform: rotate(-90deg) translateX(130px); }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+    -webkit-transform: rotate(0 deg) translateX(0px);
+            transform: rotate(0 deg) translateX(0px); } }
 
 @keyframes menu_1 {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transform: rotate(-90deg) translateX(130px);
+            transform: rotate(-90deg) translateX(130px); }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+    -webkit-transform: rotate(0 deg) translateX(0px);
+            transform: rotate(0 deg) translateX(0px); } }
+@-webkit-keyframes menu_2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg); }
+  60% {
+    -webkit-transform: rotateX(50deg);
+            transform: rotateX(50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateX(0 deg);
+            transform: rotateX(0 deg); } }
+@keyframes menu_2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg); }
+  60% {
+    -webkit-transform: rotateX(50deg);
+            transform: rotateX(50deg); }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateX(0 deg);
+            transform: rotateX(0 deg); } }
+@-webkit-keyframes menu_3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3) translateY(-60px);
+            transform: scale(0.3) translateY(-60px); }
+  80% {
+    -webkit-transform: scale(1.2) translateY(10px);
+            transform: scale(1.2) translateY(10px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(0px);
+            transform: scale(1) translateY(0px); } }
+@keyframes menu_3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3) translateY(-60px);
+            transform: scale(0.3) translateY(-60px); }
+  80% {
+    -webkit-transform: scale(1.2) translateY(10px);
+            transform: scale(1.2) translateY(10px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(0px);
+            transform: scale(1) translateY(0px); } }
+@-webkit-keyframes menu_4 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-30deg) translateX(30px);
+            transform: rotate(-30deg) translateX(30px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translateX(0px);
+            transform: rotate(0deg) translateX(0px); } }
+@keyframes menu_4 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-30deg) translateX(30px);
+            transform: rotate(-30deg) translateX(30px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translateX(0px);
+            transform: rotate(0deg) translateX(0px); } }
 body {
   background-image: url("../../image/main_bg.jpg");
   background-size: cover;
